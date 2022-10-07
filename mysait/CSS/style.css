@@ -392,6 +392,7 @@ body {
     font-weight: normal;
     color: black;
     
+    
     /* min-width: 300px; */
     
     
@@ -409,11 +410,16 @@ body {
 
 */
 
+.header{
+    width: 854px;
+    margin-left: center;
+}
+
 .wrapper{
     
-    margin: center;
-    max-width: 854px;
     
+    width: 854px;
+    margin: center;
     height: 50px;
     border: 1px solid rgb(235, 30, 30);
     position: fixed;
