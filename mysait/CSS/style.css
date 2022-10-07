@@ -391,7 +391,7 @@ body {
     line-height: 1.2;
     font-weight: normal;
     color: black;
-    /* width: 854px; */
+    width: 854px;
     min-width: 300px;
     margin: auto;
     /* height: 100vh; */
