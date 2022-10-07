@@ -391,10 +391,10 @@ body {
     line-height: 1.2;
     font-weight: normal;
     color: black;
-    width: 854px;
-    min-width: 300px;
-    margin: auto;
-    /* height: 100vh; */
+    
+    /* min-width: 300px; */
+    
+    
     
     
     
@@ -409,55 +409,55 @@ body {
 
 */
 
-.header{
+.wrapper{
     
+    margin: center;
+    max-width: 854px;
     
-    /* width: 864px; */
     height: 50px;
-    border: 1px solid rgb(159, 79, 179);
+    border: 1px solid rgb(235, 30, 30);
     position: fixed;
 
 }
 
-.header__header{ 
+.header__wrapper{ 
     
-    display: inline-flex;
-    
-    
-    width: 100%;
-    /* flex-wrap: nowrap; */
-    /* align-items: flex-start; */
-    /* justify-content: space-between; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
 } 
 
 
 
-.header__logo{
-    display: block;
-    
-    
+.header__list {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .header__item{
-
+    margin-right: 1px;
 }
 
-.header__link {
+.header__item:last-child{
+    margin-right: 0;
+}
     
     
-    
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #b1d6b2;
-    border: 1px solid black;
-    width: 100%;
+.header__link{  
+    display: block;  
+    width: 150px;
     height: 48px;
     color: black;
+    background-color: #b1d6b2;
+    border: 1px solid black;
+    
     /* padding: 12px 43px; */
-    align-items: center;
+    
     text-decoration: none;
     font-size: 19px;
     padding-top: 14px;
+    align-items: center;
     cursor: pointer;
     
 }
@@ -469,7 +469,7 @@ body {
 
 .middle{
     
-    /* max-width: 864px; */
+    max-width: 854px;
     height: 100vh;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -479,9 +479,9 @@ body {
     align-items: stretch;
 }
 
-.menu{
+.middle__menu{
     
-    min-width: 204px;
+    width: 204px;
     /* margin: left; */
     /* height: 500px; */
     border: 1px solid red;
@@ -490,9 +490,9 @@ body {
 }
 
 .main__screen{
-    display: block;
+    display: flex;
     
-    /* max-width: 650px; */
+    width: 650px;
     /* margin: left; */
     /* height: 700px; */
     border: 1px solid red;
@@ -504,7 +504,7 @@ body {
     
     background-attachment: fixed;
     
-    /* background-size: 500px; */
+    background-size: 500px;
     background-position: center;
     
 }
@@ -514,7 +514,7 @@ body {
     position: absolute;
     /* display: inherit; */
     border: 1px solid green;
-    /* max-width: 864px; */
+    width: 854px;
     height: 50px;
     bottom: 0;
 }
