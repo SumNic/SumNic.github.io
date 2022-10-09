@@ -452,7 +452,7 @@ body {
 }
 
 .header__menu{
-    width: 650px;
+    max-width: 650px;
 }
 
 
