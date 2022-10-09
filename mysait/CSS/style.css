@@ -391,14 +391,6 @@ body {
     line-height: 1.2;
     font-weight: normal;
     color: black;
-    
-    
-    /* min-width: 300px; */
-    
-    
-    
-    
-    
 }  
 /* 
   background-image: url(../images/Logotip-Rodnoj-parti-730x7301.png);
@@ -418,34 +410,16 @@ body {
 
 .header__wrapper{
     max-width: 854px;
-    
     display: flex;
     flex-wrap: nowrap;
-    /* align-items: stretch; */
     height: 50px;
-    /* position: relative; */
-    
     margin: 0 auto;
-    /* width: 100%; */
-    
-    
-    /* flex-wrap: wrap; */
-    /* align-items: flex-end; */
-    /* justify-content: space-between; */
 }
-
-
 
 .header__logo{
     display: flex;
-    /* display: inline; */
     max-width: 204px;
-    
-    /* float: left; */
-    /* height: 50px; */
 }
-
-
 
 .header__logo-pic{
     padding: 5px 0;
@@ -455,17 +429,13 @@ body {
     width: 650px;
 }
 
-
 .header__item{
     float: left;
     height: 50px;
-    /* display: inline-block; */
     text-align: center;
-    /* float: left; */
     background-color: #b1d6b2;
     border: 1px solid black;
     width: 25%;
-    /* min-width: 56.5px; */
 }
 
 .header__item:last-child{
@@ -474,16 +444,12 @@ body {
     
     
 .header__link{  
-    /* display: flex; */
     display: inline-block;
-    /* padding: 12px 43px; */
     color: black;
     text-decoration: none;
     font-size: 19px;
     padding-top: 14px;
-    
     cursor: pointer;
-    
 }
 
 /* .header__link:hover {
@@ -492,7 +458,7 @@ body {
   } */
 
 .middle{
-    
+    z-index: -1;
     max-width: 854px;
     margin: 0 auto;
     height: 100vh;
@@ -501,25 +467,19 @@ body {
     border: 1px solid rgb(61, 90, 170);
     display: flex;
     flex-wrap: nowrap;
-    align-items: stretch;
+    /* align-items: stretch; */
+    position: relative;
 }
 
 .middle__menu{
-    
     width: 204px;
-    /* margin: left; */
-    /* height: 500px; */
     border: 1px solid red;
-    /* float: left; */
-   
+    /* align-items: stretch; */
 }
 
 .middle__item{
-    /* float: left; */
-    /* border: 5px solid red; */
     width: 100%;
     height: 50px;
-    
 }
 
 .middle__link{
@@ -530,22 +490,21 @@ body {
 
 .main__screen{
     display: flex;
-    
-    width: 650px;
-    /* margin: left; */
-    /* height: 700px; */
+    /* align-items: stretch; */
     border: 1px solid red;
-    /* float: left;  */
+    /* position: relative; */
+    width: 650px;
+    
+}
 
+.main__text{
+    width: 100%;
     background-image: url(../images/Logotip-Rodnoj-parti-730x7301.png);
     background-repeat: no-repeat;
-    
-    
-    background-attachment: fixed;
-    
+    /* background-attachment: fixed; */
     background-size: 500px;
-    background-position: center;
-    
+    background-position: center center;
+    /* background-position: center; */
 }
 
 .footer{
@@ -557,15 +516,22 @@ body {
 
 .footer__{
     display: block;
-    
-    /* display: inherit; */
     border: 1px solid green;
     width: 854px;
     margin: 0 auto;
     height: 50px;
-    
+    background-color: #b1d6b2;
 }
 
+.footer__link{
+    text-decoration: none;
+    font-size: 19px;
+    padding-top: 14px;
+    cursor: pointer;
+    color: black;
+    display: block;
+    left: center;
+}
 
 
 
