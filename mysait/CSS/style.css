@@ -465,7 +465,7 @@ body {
     background-color: #b1d6b2;
     border: 1px solid black;
     width: 25%;
-    min-width: 56.5px;
+    /* min-width: 56.5px; */
 }
 
 .header__item:last-child{
