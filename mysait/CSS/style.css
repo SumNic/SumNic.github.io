@@ -499,25 +499,50 @@ body {
 
 .main__text{
     width: 100%;
-    background-image: url(../images/Logotip-Rodnoj-parti-730x7301.png);
-    background-repeat: no-repeat;
+    /* position: relative; */
+    /* background-image: url(../images/Logotip-Rodnoj-parti-730x7301.png); */
+    /* background-repeat: no-repeat; */
     /* background-attachment: fixed; */
-    background-size: 500px;
-    background-position: center center;
+    /* background-size: 500px; */
+    /* background-position: center center; */
     /* background-position: center; */
+}
+
+.middle__logo-link{
+    max-width: 500px;
+    position: fixed;
+    left: auto;
+    top: auto;
+    border: 3px solid red;
+    
+    /* position: absolute; */
+    /* display: flex; */
+}
+
+.middle__logo-pic{
+    
+    display: inline-block;
+    z-index: -1;
+    height: auto;
+    
+    /* max-width: 500px; */
+    /* display: block; */
+    /* margin-left: auto;
+    margin-right: auto; */
+   width: 100%;
 }
 
 .footer{
     position: fixed;
     bottom: 0;
     left: center;
-    width: 854px;
+    width: 100%;
 }
 
 .footer__{
-    /* display: block; */
+    display: block;
     border: 1px solid green;
-    /* width: 854px; */
+    max-width: 854px;
     
     margin: 0 auto;
     height: 50px;
@@ -525,15 +550,21 @@ body {
     text-align: center;
 }
 
+.footer__prices{
+    width: 100%;
+    /* display: flex; */
+    text-align: center;
+}
+
 .footer__link{
     
-    /* width: 100%; */
+    display: inline-block;
     text-decoration: none;
     font-size: 19px;
     padding-top: 14px;
     cursor: pointer;
     color: black;
-    /* display: inline-block; */
+    
     /* left: center; */
 }
 
