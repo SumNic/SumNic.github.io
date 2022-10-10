@@ -416,14 +416,32 @@ body {
     margin: 0 auto;
 }
 
-.header__logo{
-    display: flex;
-    max-width: 204px;
-}
+@media  screen and (min-width: 854px) {
+    .header__logo-pc {
+        display: flex;
+        max-width: 204px;
+    }
+    .header__logo-mobile {
+      display: none;
+    }
+  }
+  
+  @media  screen and (max-width: 853px) {
+    .header__logo-pc {
+      display: none;
+    }
+    .header__logo-mobile {
+      display: block;
+      min-width: 50px;
+    }
+  }
 
 .header__logo-pic{
     padding: 5px 0;
 }
+
+
+
 
 .header__menu{
     width: 650px;
@@ -471,11 +489,26 @@ body {
     /* position: relative; */
 }
 
-.middle__menu{
+/* .middle__menu{
     width: 204px;
     border: 1px solid red;
-    /* align-items: stretch; */
-}
+} */
+
+@media  screen and (min-width: 854px) {
+    .middle__menu {
+        width: 204px;
+        border: 1px solid red;
+    }
+    
+  }
+  
+  @media  screen and (max-width: 853px) {
+    
+    .middle__menu {
+        width: 50px;
+        border: 1px solid red;
+    }
+  }
 
 .middle__item{
     width: 100%;
@@ -490,23 +523,13 @@ body {
 
 .main__screen{
     display: flex;
-    /* align-items: stretch; */
     border: 1px solid red;
     position: relative;
     width: 650px;
-    
 }
 
 .main__text{
     width: 100%;
-    
-    /* position: relative; */
-    /* background-image: url(../images/Logotip-Rodnoj-parti-730x7301.png); */
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
-    /* background-size: 500px; */
-    /* background-position: center center; */
-    /* background-position: center; */
 }
 
 .middle__logo {
