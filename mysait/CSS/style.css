@@ -432,6 +432,7 @@ body {
     }
     .header__logo-mobile {
       display: block;
+      max-width: 204px;
       min-width: 50px;
     }
   }
@@ -502,7 +503,7 @@ body {
     
   }
   
-  @media  screen and (max-width: 853px) {
+  @media  screen and (max-width: 854px) {
     
     .middle__menu {
         width: 50px;
@@ -546,6 +547,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* position: sticky;
+    top: 0;
+     */
 
     
     
@@ -556,6 +560,9 @@ body {
 .middle__logo-pic{
     max-width: 100%;
     display: block;
+    
+    /* position: sticky;
+    top: 50px; */
     
     
     
