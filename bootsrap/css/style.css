@@ -402,11 +402,11 @@ body {
   background-position: center 100px;
 
 */
-.header{
+/* .header{
     position: fixed;
     top: 0;
     left: center;
-    width: 100%;
+    /* width: 100%; 
 }
 
 .header__wrapper{
@@ -459,7 +459,7 @@ body {
 }
 
 .header__item:last-child{
-    /* margin-right: 0; */
+    /* margin-right: 0; 
 }
     
     
@@ -472,10 +472,12 @@ body {
     cursor: pointer;
 }
 
+*/
+
 /* .header__link:hover {
     background-color: #ddd;
     color: black;
-  } */
+  } */ 
 
 .middle{
     z-index: -1;
