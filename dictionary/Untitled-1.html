@@ -7,20 +7,35 @@
     
     <title>Englich</title>
     <link rel="shortcut icon" href="images/icon.png" type="image/png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="own">
-    <div class="wrapper">
-      <div class="add">
-        <input type="text" id="1" placeholder="select word">
-                <button onclick="myfunction(this)" id="1">Добавить</button>
-                <button onclick="myfunctionRes()" id="res">Очистить</button>
+  <div class="container--fluid">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+      <div class="col">
+          <div class="add">
+            <!-- <input type="text" id="1" placeholder="select word"> -->
+            <input type="text" id="1" placeholder="select word" class="form-control" aria-describedby="passwordHelpInline">
+                  
+            <button onclick="myfunction(this)" id="1" class="btn btn-primary btn-sm">Добавить</button>
+            <button onclick="myfunctionRes()" id="res" class="btn btn-primary btn-sm">Очистить</button>
+          </div>
+          <div class="listen">
+            <p id="word"></p>
+          </div>
+      </div>          
+      <div class="col">
+      </div> 
+      <div class="col">
+      </div> 
+      <div class="col">
+      </div> 
+
       </div>
       
-      <div class="listen">
-        <p id="word"></p>
-      </div>
+      
     </div>
     
     
