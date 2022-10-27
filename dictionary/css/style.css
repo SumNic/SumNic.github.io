@@ -404,25 +404,20 @@ body {
     flex-wrap: wrap;
     
     
-    border: 2px solid grey;
+    
 }
 .wrapper {
-    width: 400px;
+    width: 390px;
     
     display: inline-block;
     
-    border: 2px solid yellow;
-}
-
-add {
-    display: flex;
-    flex-wrap: wrap;
+    
 }
 
 
-listen {
-    display: flex;
-}
+
+
+
 
 
 
@@ -465,16 +460,47 @@ listen {
     width: 203px;
 }  */
 
+.listen {
+    /* counter-reset: none;
+  list-style: none; */
+  /* list-style-type: none; */
+  counter-reset: heading;
+}
+
+
 ol {
-    background: #ff9999;
-    padding: 20px;
+    
+    padding: 2px;
+    /* list-style: revert; */
+    /* list-style-position: outside; */
+    
+    
   }
 
-  ol li {
-    background: #ffe5e5;
-    color: rgb(0, 0, 0);
+  .li-item { 
+    
+    color: rgb(58, 153, 82);
+    padding: 2px;
+    margin-left: 2px;
+  }
+    
+  /* Добавляем к числам скобку */
+  
+    
+   
+
+  .li-item:before {
+    
     padding: 5px;
-    margin-left: 35px;
+    margin-left: 0;
+    counter-increment: heading; /* Указываем идентификатор счетчика */
+    content: counter(heading) ". "; /* Выводим текст перед содержимым тега <h2> */
+    
+  }
+
+  .a_class {
+    text-decoration: none;
+    color: rgb(138, 153, 142);
   }
 
 
