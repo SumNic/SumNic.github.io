@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Englich</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="own">
+    <div class="wrapper">
+      <div class="add">
+        <input type="text" id="1" placeholder="select word">
+                <button onclick="myfunction(this)" id="1">Добавить</button>
+                <button onclick="myfunctionRes()" id="res">Очистить</button>
+      </div>
+      
+      <div class="listen">
+        <p id="word"></p>
+      </div>
+    </div>
+    <div class="iframes">
+      <iframe id="miIframe1" src=""></iframe>
+    </div>
+    
+    
+
+  </div>
+  <!-- var = imegs <img src="images/delete-icon.png" width="20" 
+   height="20" alt="Пример" onclick="fuctionReloads(this)"> -->
+  
+
+<!-- <a href=""></a> -->
+
+			
+<script>
+    
+  var arrey = JSON.parse(localStorage.getItem('myStorage'));
+  
+  if (arrey == null) {
+    localStorage.setItem('myStorage', JSON.stringify([]));
+    var arrey = JSON.parse(localStorage.getItem('myStorage'));
+    
+  } else {
+
+    function listen(){
+
+      
+      fLen = arrey.length;
+      text = "<ol>";
+        for (i=0; i < fLen; i++) {
+          var imegs = "<img id=" + i + " class=" + "imeges" + " src=" + "images/delete-icon.png" + " width=" + "20" + 
+      " height="+ "20" + " alt=" + "Пример" + " onclick=" + "fuctionReloads(this)" + ">"
+
+          text += "<li id=" + (i + 1) + " class=" + "li-item" +"><a href=" + "https://translate.google.ru/?sl=en&tl=ru&text=" + 
+            arrey[i] + "%0A&op=translate" + " target=" + "_blank" + ">" + 
+            arrey[i] + "</a>" + imegs + " </li>";
+        }
+      text += "</ol>";
+  document.getElementById("word").innerHTML = text;
+}
+  }
+listen();
+
+
+
+// " onclick=" + "fuctionReloads(this) 
+
+function fuctionReloads(element) {
+  var rel = element.id;
+  arrey.splice(rel,1);
+  console.log(arrey[rel]);
+  localStorage.setItem('myStorage', JSON.stringify(arrey));
+  location.reload();
+
+//   // var srce = "https://translate.google.ru/?sl=en&tl=ru&text=" + 
+//   //           arrey[rel-1] + "%0A&op=translate";
+//   // document.getElementById("miIframe1").src = "https://translate.yandex.ru/?from=tableau_yabro&lang=en-ru&text=" + 
+//   //           arrey[rel-1];
+
+//             // https://translate.yandex.ru/?from=tableau_yabro&lang=en-ru&text=go
+//             console.log(arrey[i]);
+// }
+// console.log(li());
+
+// document.getElementById("result").innerHTML = arrey[4-1];
+
+
+  }
+  
+
+    function myfunction(element){
+      
+          var id, x, text; 
+          id = element.id;
+          x = document.getElementById(id).value;
+          arrey.push(x);
+          // fLen = arrey.length;
+         
+          listen();
+          // text = "<ol>";
+          // for (i=0; i < fLen; i++) {
+          //   text += "<li class=" + i + ">" + arrey[i] + "</li>";
+          // }
+          // text += "</ol>";
+        
+          // document.getElementById("word").innerHTML = text;
+          localStorage.setItem('myStorage', JSON.stringify(arrey));
+          document.getElementById(id).value = "";
+
+        }   
+        
+        // console.log(arrey.(5));
+  
+
+          
+    
+        
+    function myfunctionRes(){
+      
+      localStorage.clear()
+      location.reload();
+    }
+ 
+</script>
+
+<!-- <iframe src="https://translate.google.ru/?sl=en&tl=ru&text=depend&op=translate" frameborder="0"></iframe> -->
+
+ 
+</body>
+</html>
