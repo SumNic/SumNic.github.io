@@ -45,24 +45,25 @@
     
   } else {
     listen();
-    function listen(){
-
-      
-      fLen = arrey.length;
-      text = "<ol>";
-        for (i=0; i < fLen; i++) {
-          var imegs = "<img id=" + i + " class=" + "imeges" + " src=" + "images/delete-icon.png" + " width=" + "20" + 
-      " height="+ "20" + " alt=" + "Пример" + " onclick=" + "fuctionReloads(this)" + ">"
-
-          text += "<li id=" + (i + 1) + " class=" + "li-item" +"><a href=" + "https://translate.google.ru/?sl=en&tl=ru&text=" + 
-            arrey[i] + "%0A&op=translate" + " target=" + "_blank" + ">" + 
-            arrey[i] + "</a>" + imegs + " </li>";
-        }
-      text += "</ol>";
-  document.getElementById("word").innerHTML = text;
-}
+    
   }
 // listen();
+function listen(){
+
+      
+fLen = arrey.length;
+text = "<ol>";
+  for (i=0; i < fLen; i++) {
+    var imegs = "<img id=" + i + " class=" + "imeges" + " src=" + "images/delete-icon.png" + " width=" + "20" + 
+" height="+ "20" + " alt=" + "Пример" + " onclick=" + "fuctionReloads(this)" + ">"
+
+    text += "<li id=" + (i + 1) + " class=" + "li-item" +"><a href=" + "https://translate.google.ru/?sl=en&tl=ru&text=" + 
+      arrey[i] + "%0A&op=translate" + " target=" + "_blank" + ">" + 
+      arrey[i] + "</a>" + imegs + " </li>";
+  }
+text += "</ol>";
+document.getElementById("word").innerHTML = text;
+}
 
 
 
