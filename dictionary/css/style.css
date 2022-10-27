@@ -422,7 +422,7 @@ body {
 
 
 .iframes {
-    width: calc(100% - 400px);
+    width: calc(100% - 390px);
     display: flex;
     flex-wrap: wrap;
     border: 2px solid red;
@@ -461,10 +461,11 @@ body {
 }  */
 
 .listen {
-    /* counter-reset: none;
-  list-style: none; */
+    
+  list-style: none; 
+  counter-reset: df;
   /* list-style-type: none; */
-  counter-reset: heading;
+  /* counter-reset: df; */
 }
 
 
@@ -479,7 +480,7 @@ ol {
 
   .li-item { 
     
-    color: rgb(58, 153, 82);
+    color: black;
     padding: 2px;
     margin-left: 2px;
   }
@@ -493,14 +494,15 @@ ol {
     
     padding: 5px;
     margin-left: 0;
-    counter-increment: heading; /* Указываем идентификатор счетчика */
-    content: counter(heading) ". "; /* Выводим текст перед содержимым тега <h2> */
+    counter-increment: df; /* Указываем идентификатор счетчика */
+    content: counter(df) ". "; /* Выводим текст перед содержимым тега <h2> */
+    font-size: 18px;
     
   }
 
   .a_class {
     text-decoration: none;
-    color: rgb(138, 153, 142);
+    color: black;
   }
 
 
