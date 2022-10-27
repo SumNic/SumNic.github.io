@@ -77,6 +77,19 @@
 			<h2>Я создаю свой проект, который принесет мне очень много денег</h2>
 			<h2>Я пока ещё думаю над его содержанием, но уже сейчас уверен, что у меня всё получится и благодаря этому проекту я стану сказочно богат</h2>
 			
+			<p id="mapholder">ффф</p>
+			
+			<script>
+			
+			function showPosition(position) {
+				var latlon = position.coords.latitude + "," + position.coords.longitude;
+			  
+				var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=
+				"+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_KEY";
+			  
+				document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+			  }
+			</script>
 		</div>
 	</div>
 	
