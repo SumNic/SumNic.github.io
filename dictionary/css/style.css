@@ -31,11 +31,9 @@ html {
 }
 
 .col {
-<<<<<<< HEAD
+
    max-width: 420px; 
-=======
-   min-width: 420px; 
->>>>>>> f8ab42be46645b6b04746633e3a06b8957e44c14
+
    border: 1px solid black;
 }
 
