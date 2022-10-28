@@ -41,7 +41,7 @@ html {
     display: inline-block;
     margin-top: 0;
     
-    width: 200px;
+    max-width: 200px;
     height: 31px;
     
 }
@@ -54,7 +54,7 @@ html {
 
 
 .listen {
-    
+  display: inline-block; 
   list-style: none; 
   counter-reset: df;
   margin-right: 20px;
