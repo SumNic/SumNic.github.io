@@ -89,12 +89,12 @@
     var id, x, text; 
     id = element.id;
     x = document.getElementById(id).value;
-    arrey.push(x);
+    data = arrey.push(x);
                                               
         listen();
                                       
     // localStorage.setItem('myStorage', JSON.stringify(arrey));
-    JSON.stringify(arrey); //нова
+    JSON.stringify(data); //нова
     document.getElementById(id).value = "";
   }   
         
