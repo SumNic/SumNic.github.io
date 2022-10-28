@@ -78,10 +78,12 @@
 
   function fuctionReloads(element) {
     var rel = element.id;
-    var data= arrey.splice(rel,1);
+    arrey.splice(rel,1);
     console.log(data);
     // localStorage.setItem('myStorage', JSON.stringify(arrey));
-    JSON.stringify(data); //нова
+    fs.writeFileSync('data.json', JSON.stringify(arrey)); 
+    
+    
     location.reload();
   }
 
@@ -89,12 +91,14 @@
     var id, x, text; 
     id = element.id;
     x = document.getElementById(id).value;
-    data = arrey.push(x);
+    arrey.push(x);
                                               
         listen();
                                       
     // localStorage.setItem('myStorage', JSON.stringify(arrey));
-    JSON.stringify(data); //нова
+    fs.writeFileSync('data.json', JSON.stringify(arrey));
+    
+    
     document.getElementById(id).value = "";
   }   
         
