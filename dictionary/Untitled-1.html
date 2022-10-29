@@ -8,13 +8,13 @@
     <title>Englich</title>
     <link rel="shortcut icon" href="images/icon.png" type="image/png">
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="data.json"></script>
+   
 </head>
 <body>
-  <div class="container--fluid">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+  <div class="container">
+    <div class="row">
       <div class="col">
           <div class="add">
             <!-- <input type="text" id="1" placeholder="select word"> -->
@@ -25,14 +25,20 @@
           </div>
           <div class="listen">
             <p id="word"></p>
+            <p>dsfffffffffffffffffffffffffffffffffffffffffffffffffffff
+              dfsssssssssssssssssssssssssssssssssssssssssssssssssssss
+              sdffffffffffffffffffffffffffffffffffffffffffffffffff
+              asdddddddddddddddddddddddddddddddddddddddddddddddddd
+              dsffffffffffffffffffffffffffffffffffffffffffffffffffffffddddddddddddddddg
+            </p>
           </div>
       </div>          
-      <div class="col">
+      <!-- <div class="col">
       </div> 
       <div class="col">
       </div> 
       <div class="col">
-      </div> 
+      </div>  -->
 
       </div>
       
@@ -46,18 +52,18 @@
   			
 <script>
     
-  // var arrey = JSON.parse(localStorage.getItem('myStorage'));
-  var arrey = JSON.parse(data);
+  var arrey = JSON.parse(localStorage.getItem('myStorage'));
+  
   console.log(arrey);
   
-  // if (arrey == null) {
-  //   localStorage.setItem('myStorage', JSON.stringify([]));
-  //   var arrey = JSON.parse(localStorage.getItem('myStorage'));
+  if (arrey == null) {
+    localStorage.setItem('myStorage', JSON.stringify([]));
+    var arrey = JSON.parse(localStorage.getItem('myStorage'));
     
     
-  // } else {
-  //   listen();
-  // }
+  } else {
+    listen();
+  }
   listen();
 
   function listen(){
@@ -77,19 +83,18 @@
   }
 
   function fuctionReloads(element) {
-    const fs = require('fs');
+    
     var rel = element.id;
     arrey.splice(rel,1);
-    console.log(data);
-    // localStorage.setItem('myStorage', JSON.stringify(arrey));
-    fs.writeFileSync('data.json', JSON.stringify(arrey)); 
+    localStorage.setItem('myStorage', JSON.stringify(arrey));
+    
     
     
     location.reload();
   }
 
   function myfunction(element){
-    const fs = require('fs');
+    
     var id, x, text; 
     id = element.id;
     x = document.getElementById(id).value;
@@ -97,10 +102,8 @@
                                               
         listen();
                                       
-    // localStorage.setItem('myStorage', JSON.stringify(arrey));
-    fs.writeFileSync('data.json', JSON.stringify(arrey));
-    
-    
+    localStorage.setItem('myStorage', JSON.stringify(arrey));
+        
     document.getElementById(id).value = "";
   }   
         
