@@ -481,7 +481,7 @@ ol {
     color: black;
     padding: 2px;
     margin-left: 2px;
-    box-sizing: border-box;
+    box-sizing: content-box;
     
   /* overflow-y: hidden; */
 
