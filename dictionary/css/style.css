@@ -446,7 +446,7 @@ body {
 
 
 .listen {
-  display: block; 
+  display: inline-block; 
   list-style: none; 
   counter-reset: df;
   margin-right: 20px;
@@ -464,19 +464,19 @@ ol {
     /* list-style-position: outside; */
     /* overflow-x: hidden; */
   /* overflow-y: scroll; */
-  display: flex;
+  /* display: flex;
     flex-wrap: wrap;
     overflow: auto;
-  
+   */
     
     
   }
 
   .li-item { 
-    display: block;
-    float: left;
+    display: inline-block;
     
-    width: 300px;
+    
+    /* width: 700px; */
     /* float: left; */
     color: black;
     padding: 2px;
