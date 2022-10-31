@@ -18,31 +18,17 @@
       <div class="col">
           <div class="add">
             <!-- <input type="text" id="1" placeholder="select word"> -->
-            <input type="text" id="1" placeholder="select word" class="form-control" aria-describedby="passwordHelpInline">
+            <input type="text" id="1" placeholder="select word" class="form-control">
                   
-            <button onclick="myfunction(this)" id="1" class="btn btn-primary btn-sm">Добавить</button>
-            <button onclick="myfunctionRes()" id="res" class="btn btn-primary btn-sm">Очистить</button>
+            <button onclick="myfunction(this)" id="1" class="btn">Добавить</button>
+            <button onclick="myfunctionRes()" id="res" class="btn">Очистить</button>
           </div>
           <div class="listen">
-            <p id="word"></p>
-            <p>dsfffffffffffffffffffffffffffffffffffffffffffffffffffff
-              dfsssssssssssssssssssssssssssssssssssssssssssssssssssss
-              sdffffffffffffffffffffffffffffffffffffffffffffffffff
-              asdddddddddddddddddddddddddddddddddddddddddddddddddd
-              dsffffffffffffffffffffffffffffffffffffffffffffffffffffffddddddddddddddddg
-            </p>
+            <ul id="list"></ul>
+            
           </div>
       </div>          
-      <!-- <div class="col">
-      </div> 
-      <div class="col">
-      </div> 
-      <div class="col">
-      </div>  -->
-
-      </div>
-      
-      
+           
     </div>
     
     
@@ -54,8 +40,7 @@
     
   var arrey = JSON.parse(localStorage.getItem('myStorage'));
   
-  console.log(arrey);
-  
+    
   if (arrey == null) {
     localStorage.setItem('myStorage', JSON.stringify([]));
     var arrey = JSON.parse(localStorage.getItem('myStorage'));
@@ -69,7 +54,8 @@
   function listen(){
         
     fLen = arrey.length;
-    text = "<ol>";
+    // text = "<ol>";
+      text = "";
     for (i=0; i < fLen; i++) {
       var imegs = "<img id=" + i + " class=" + "imeges" + " src=" + "images/delete-icon.png" + " width=" + "20" + 
       " height="+ "20" + " alt=" + "Пример" + " onclick=" + "fuctionReloads(this)" + ">"
@@ -78,8 +64,8 @@
         arrey[i] + "%0A&op=translate" + " target=" + "_blank" + ">" + 
         arrey[i] + "</a>" + imegs + " </li>";
     }
-    text += "</ol>";
-    document.getElementById("word").innerHTML = text;
+    // text += "</ol>";
+    document.getElementById("list").innerHTML = text;
   }
 
   function fuctionReloads(element) {
