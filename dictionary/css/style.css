@@ -408,26 +408,12 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    
-
-}
-
-.footer__2 {
     height: 40px;
     border: 1px solid rgb(196, 68, 68);
 }
 
-.container {
-    position: relative; 
-    top: 40px;
-    bottom: 40px;
-    height: 100vh;
-  
-}
-
-
-.add {
-    /* margin: 5px; */
+.adde {
+    margin: 0;
     /* display: block; */
     /* position: fixed; */
     
@@ -437,72 +423,63 @@ footer {
     display: inline-block;
 }
 
-.btn_one {
-    display: inline-block;
-    border: 1px solid #b3d4fc;
-}
-
-.col {
-  
-    
-  margin: 0;
-  /* box-sizing: border-box; */
-  
-    
-
-   border: 1px solid black;
-   
-}
-
-
 .form-control {
-    
     margin: 0;
     padding: 5px;
     max-width: 200px;
     /* height: 30px; */
     border-radius: 10px 10px 10px 10px;
+}
 
-    
+.btn_one {
+    display: inline-block;
+    border: 1px solid #b3d4fc;
 }
 
 .btn {
     padding: 5px;
     background-color: #f6f6f6; /*Цвет текстового поля*/
-  border-radius: 10px 10px 10px 10px; /*Закругляем уголки*/
+    border-radius: 10px 10px 10px 10px; /*Закругляем уголки*/
+}
+
+.container {
+    
+    
+}
+
+.col {
+   margin: 0;
+   box-sizing: border-box;
+   border: 1px solid black;
+   height: (100vh-80px);
+   position: relative; 
+    top: 40px;
+    bottom: 40px;
 }
 
 .listen {
-    
-    
-    
-    position: relative;  
-  list-style: none; 
-  counter-reset: df;
-  
+    /* position: relative;   */
+    list-style: none; 
+    counter-reset: df;
 }
 
-
 #list {
-    align-items: left;
+    /* align-items: left; */
     padding: 2px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    
-    
-    
-  }
+}
 
-  #list:after {
+#list:after {
     content: "";
     height: 100%;
     width: 0;
     flex-shrink: 1;
-  }
+}
   
 
-  .li-item { 
+.li-item { 
     
     /* display: block; */
    /* display: flex;  */
@@ -511,21 +488,14 @@ footer {
     /* float: left; */
     max-width: 375px;
     outline: 1px dotted black;
-  outline-offset: -1px;
+    outline-offset: -1px;
     color: black;
     padding: 2px;
     margin-left: 2px;
  
-  }
-
+}
   
-    
-  /* Добавляем к числам скобку */
-  
-    
-   
-
-  .li-item:before {
+.li-item:before {
     
     padding: 5px;
     margin-left: 0;
@@ -533,13 +503,13 @@ footer {
     content: counter(df) ". "; /* Выводим текст перед содержимым тега <h2> */
     font-size: 18px;
     
-  }
+}
 
-  .a_class {
+.a_class {
     text-decoration: none;
     color: black;
     text-transform: capitalize;
-  }
+}
 
 
 .imeges {
