@@ -396,7 +396,32 @@ body {
     margin: auto;
 }   
 
+header {
+    position: fixed;
+    top: 0;
+    height: 40px;
+    border: 1px solid rgb(196, 68, 68);
+    width: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+
+}
+
+.footer__2 {
+    height: 40px;
+    border: 1px solid rgb(196, 68, 68);
+}
+
 .container {
+    position: relative; 
+    top: 40px;
+    bottom: 40px;
+    height: 100vh;
   
 }
 
@@ -419,9 +444,9 @@ body {
 
 .col {
   
-  
+    
   margin: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   
     
 
@@ -450,8 +475,8 @@ body {
 .listen {
     
     
-  
-   
+    
+    position: relative;  
   list-style: none; 
   counter-reset: df;
   
@@ -459,12 +484,12 @@ body {
 
 
 #list {
-    
+    align-items: left;
     padding: 2px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 100vh;
+    
     
     
   }
