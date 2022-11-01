@@ -135,7 +135,7 @@ document.getElementById('list').setAttribute("style", collist);
 var colcol = Math.floor(arrey.length / heightcolumn);
 console.log(colcol);
 var collist = "grid-template-columns: (" + colcol + ", 1fr)"; 
-document.getElementById('demo').innerHTML = collist;
+document.getElementById('demo').innerHTML = collist + " " + window.innerHeight + " " + window.innerWidth;
 </script>
  
 </body>
