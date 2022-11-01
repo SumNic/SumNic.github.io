@@ -122,7 +122,9 @@ var heightcolumn = Math.floor(innerwin / 30);
 console.log(heightcolumn);
 var collist = "grid-template-rows: repeat(" + heightcolumn + ", 1fr)";
 document.getElementById('list').setAttribute("style", collist);
- 
+var colcol = arrey.length / heightcolumn;
+console.log(colcol);
+var collist = "grid-template-columns: (" + colcol + ", 1fr)"; 
 </script>
  
 </body>

@@ -485,7 +485,7 @@ footer {
 
 .liste {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: (4, 1fr);
     grid-auto-flow: column;
     /* gap: 10px; */
     /* background-color: #8cad71; */
@@ -498,6 +498,7 @@ footer {
 .li-item { 
 
     max-width: 375px;
+    min-width: 275px;
     height: 30px;
     outline: 1px dotted black;
     outline-offset: -1px;
