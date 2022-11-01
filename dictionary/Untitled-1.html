@@ -52,7 +52,11 @@
 
 
 <footer>
-  <div class="footer__2"></div>
+  <div class="footer__2">
+    <p id="demo">
+
+    </p>
+  </div>
 </footer>
   			
 <script>
@@ -131,6 +135,7 @@ document.getElementById('list').setAttribute("style", collist);
 var colcol = Math.floor(arrey.length / heightcolumn);
 console.log(colcol);
 var collist = "grid-template-columns: (" + colcol + ", 1fr)"; 
+document.getElementById('demo').innerHTML = collist;
 </script>
  
 </body>

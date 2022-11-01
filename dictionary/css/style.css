@@ -433,6 +433,12 @@ footer {
     height: 40px;
     border: 1px solid rgb(196, 68, 68);
     background-color: red;
+
+}
+
+.footer__2 {
+    
+    align-items: center;
 }
 
 .adde {
