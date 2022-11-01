@@ -37,7 +37,7 @@
       <div class="col">
           
           <div class="listen">
-            <div id="list" class="liste" style="height: 800px;"></div>
+            <ol id="list" class="liste"></ol>
             
           </div>
       </div>          
@@ -50,16 +50,7 @@
 </footer>
   			
 <script>
-var innerwin = window.innerHeight - 80;
-var win = "height:" + innerwin + "px";
 
-console.log(win);
-document.getElementById('list').setAttribute("style", win);
-
-var heightcolumn = Math.floor(innerwin / 30);
-console.log(heightcolumn);
-var collist = "grid-template-rows: repeat(" + heightcolumn + ", 1fr)";
-document.getElementById('list').setAttribute("style", collist);
     
   var arrey = JSON.parse(localStorage.getItem('myStorage'));
   
@@ -83,9 +74,9 @@ document.getElementById('list').setAttribute("style", collist);
       var imegs = "<img id=" + i + " class=" + "imeges" + " src=" + "images/delete-icon.png" + " width=" + "20" + 
       " height="+ "20" + " alt=" + "Пример" + " onclick=" + "fuctionReloads(this)" + ">"
 
-      text += "<div id=" + (i + 1) + " class=" + "li-item" +"><a class=" + "a_class" + " href=" + "https://translate.google.ru/?sl=en&tl=ru&text=" + 
+      text += "<li id=" + (i + 1) + " class=" + "li-item" +"><a class=" + "a_class" + " href=" + "https://translate.google.ru/?sl=en&tl=ru&text=" + 
         arrey[i] + "%0A&op=translate" + " target=" + "_blank" + ">" + 
-        arrey[i] + "</a>" + imegs + " </div>";
+        arrey[i] + "</a>" + imegs + " </li>";
     }
     // text += "</ol>";
     document.getElementById("list").innerHTML = text;
@@ -120,6 +111,17 @@ document.getElementById('list').setAttribute("style", collist);
     localStorage.clear()
     location.reload();
   }
+
+  var innerwin = window.innerHeight - 80;
+var win = "height:" + innerwin + "px";
+
+console.log(win);
+document.getElementById('list').setAttribute("style", win);
+
+var heightcolumn = Math.floor(innerwin / 30);
+console.log(heightcolumn);
+var collist = "grid-template-rows: repeat(" + heightcolumn + ", 1fr)";
+document.getElementById('list').setAttribute("style", collist);
  
 </script>
  
