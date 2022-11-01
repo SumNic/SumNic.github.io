@@ -122,7 +122,7 @@
     location.reload();
   }
 
-  var innerwin = (window.innerHeight - 80) / window.devicePixelRatio;
+var innerwin = (window.innerHeight - 80) / window.devicePixelRatio;
 var win = "height:" + innerwin + "px";
 
 console.log(innerwin);
@@ -142,16 +142,31 @@ var colcol = Math.ceil(arrey.length / heightcolumn);
 
 if((window.innerWidth/375)>colcol) {
   
-  var colcol1 = Math.floor(window.innerWidth/375);
-  console.log(colcol1 + "-1");
-  var collistWidth = "grid-template-columns: repeat(" + colcol1 + ", 1fr); " + collistHeight;
+  var colcol = Math.ceil(window.innerWidth/375);
+  console.log(colcol + "-1");
+  var collistWidth = "grid-template-columns: repeat(" + colcol + ", 1fr); " + collistHeight;
   document.getElementById('list').setAttribute("style", collistWidth);
 } else {
   
-  var colcol2 = Math.floor(arrey.length / heightcolumn);
-  console.log(colcol2 + "-2");
-  var collistWidth = "grid-template-columns: repeat(" + colcol2 + ", 1fr); " + collistHeight; 
+  var colcol = Math.ceil(arrey.length / heightcolumn);
+  console.log(colcol + "-2");
+  var collistWidth = "grid-template-columns: repeat(" + colcol + ", 1fr); " + collistHeight; 
   document.getElementById('list').setAttribute("style", collistWidth);
+
+}
+
+for (i=0; i < fLen; i++) {
+    if ((window.innerWidth / window.devicePixelRatio)<375) {
+      var colWidth = "width:" + (window.innerWidth / window.devicePixelRatio) + "px;";
+      document.getElementsByClassName('li-item')[i].style = colWidth;
+      console.log(colWidth);
+    } else {
+      var colWidth = Math.floor((window.innerWidth / window.devicePixelRatio) / colcol);
+
+      colWidth = "width:" + colWidth + "px;"
+      document.getElementsByClassName('li-item')[i].style = colWidth;
+
+    }
 
 }
 
