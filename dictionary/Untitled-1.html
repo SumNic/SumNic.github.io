@@ -122,10 +122,10 @@
     location.reload();
   }
 
-  var innerwin = window.innerHeight - 80;
+  var innerwin = (window.innerHeight - 80) / window.devicePixelRatio;
 var win = "height:" + innerwin + "px";
 
-console.log(win);
+console.log(innerwin);
 document.getElementById('list').setAttribute("style", win);
 
 var heightcolumn = Math.floor(innerwin / 30);
