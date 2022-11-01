@@ -25,6 +25,7 @@
       
       <button onclick="myfunction(this)" id="1" class="btn">Добавить</button>
       <button onclick="myfunctionRes()" id="res" class="btn">Очистить</button>
+    
     </div>      
     
   </div>
@@ -36,7 +37,7 @@
       <div class="col">
           
           <div class="listen">
-            <ul id="list" class="liste" style="height: 800px;"></ul>
+            <div id="list" class="liste" style="height: 800px;"></div>
             
           </div>
       </div>          
@@ -53,7 +54,12 @@ var innerwin = window.innerHeight - 80;
 var win = "height:" + innerwin + "px";
 
 console.log(win);
-  document.getElementById('list').setAttribute("style", win);
+document.getElementById('list').setAttribute("style", win);
+
+var heightcolumn = Math.floor(innerwin / 30);
+console.log(heightcolumn);
+var collist = "grid-template-rows: repeat(" + heightcolumn + ", 1fr)";
+document.getElementById('list').setAttribute("style", collist);
     
   var arrey = JSON.parse(localStorage.getItem('myStorage'));
   
@@ -77,9 +83,9 @@ console.log(win);
       var imegs = "<img id=" + i + " class=" + "imeges" + " src=" + "images/delete-icon.png" + " width=" + "20" + 
       " height="+ "20" + " alt=" + "Пример" + " onclick=" + "fuctionReloads(this)" + ">"
 
-      text += "<li id=" + (i + 1) + " class=" + "li-item" +"><a class=" + "a_class" + " href=" + "https://translate.google.ru/?sl=en&tl=ru&text=" + 
+      text += "<div id=" + (i + 1) + " class=" + "li-item" +"><a class=" + "a_class" + " href=" + "https://translate.google.ru/?sl=en&tl=ru&text=" + 
         arrey[i] + "%0A&op=translate" + " target=" + "_blank" + ">" + 
-        arrey[i] + "</a>" + imegs + " </li>";
+        arrey[i] + "</a>" + imegs + " </div>";
     }
     // text += "</ol>";
     document.getElementById("list").innerHTML = text;

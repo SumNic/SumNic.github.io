@@ -417,11 +417,7 @@ footer {
 
 .adde {
     margin: 0;
-    /* display: block; */
-    /* position: fixed; */
-    
-    
-    
+ 
 }
 
 .input {
@@ -432,7 +428,6 @@ footer {
     margin: 0;
     padding: 5px;
     max-width: 200px;
-    /* height: 30px; */
     border-radius: 10px 10px 10px 10px;
 }
 
@@ -448,88 +443,77 @@ footer {
 }
 
 .container { 
+
     z-index: -2;
-    position: absolute;
+    position: relative;
     width: 100%;
-  top: 40px;
-  left: 0;
-  
- 
-    
-    
+    top: 40px;
+    left: 0;
+
 } 
 
 .col {
    
-   box-sizing: border-box;
-   border: 1px solid black;
-   
-   
-    
-    
-    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    /* width: 100%; */
 }
 
 .listen {
-    
-    /* position: fixed;   */
+
     list-style: none; 
     counter-reset: df;
-    
-    
-    
-    
+
 }
 
-.liste {
-    /* position: fixed;  */
-    
-    /* margin-bottom: 80px; */
-    /* height: 500px;  */
-    /* align-items: left; */
+/* .liste {
+
     padding: 2px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    
-}
 
-.liste::after {
+} */
+
+/* .liste::after {
     
     content: "";
     width:100%;
     order:0;
     flex-shrink: 1;
-}
-  
+} */
+
+.liste {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-auto-flow: column;
+    /* gap: 10px; */
+    /* background-color: #8cad71; */
+    padding: 10px;
+    /* align-content: start; */
+    /* grid-template-rows: repeat(4, 1fr); */
+    
+}  
 
 .li-item { 
-   
-    /* display: block; */
-   /* display: flex;  */
-   /* justify-content: space-between; */
-    /* width: 250px; */
-    /* float: left; */
+
     max-width: 375px;
+    height: 30px;
     outline: 1px dotted black;
     outline-offset: -1px;
     color: black;
     padding: 2px;
     margin-left: 2px;
+    overflow: auto;
  
 }
 
-/* .li-item.new-string,
-.li-item.new-string ~ .li-item {
-  order:1;
-} */
-  
 .li-item:before {
     
-    padding: 5px;
+    /* padding: 5px; */
     margin-left: 0;
-    counter-increment: df; /* Указываем идентификатор счетчика */
-    content: counter(df) ". "; /* Выводим текст перед содержимым тега <h2> */
+    counter-increment: df; 
+    content: counter(df) ". "; 
     font-size: 18px;
     
 }
@@ -539,7 +523,6 @@ footer {
     color: black;
     text-transform: capitalize;
 }
-
 
 .imeges {
     float: right;
