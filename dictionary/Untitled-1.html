@@ -128,7 +128,7 @@ var win = "height:" + innerwin + "px";
 console.log(innerwin);
 document.getElementById('list').setAttribute("style", win);
 
-var heightcolumn = Math.floor(innerwin / 30) / window.devicePixelRatio;
+var heightcolumn = Math.floor(innerwin / 30 / window.devicePixelRatio);
 // console.log(heightcolumn);
 var collistHeight = "grid-template-rows: repeat(" + heightcolumn + ", 1fr)";
 // document.getElementById('list').setAttribute("style", collistHeight);
@@ -156,15 +156,16 @@ if((window.innerWidth/375)>colcol) {
 }
 
 for (i=0; i < fLen; i++) {
-    if ((window.innerWidth / window.devicePixelRatio)<375) {
-      var colWidth = "width:" + (window.innerWidth / window.devicePixelRatio) + "px;";
+    if ((window.innerWidth / window.devicePixelRatio)<600) {
+      var colWidth = "width:" + Math.floor(window.innerWidth / window.devicePixelRatio) + "px;";
       document.getElementsByClassName('li-item')[i].style = colWidth;
-      console.log(colWidth);
+      console.log(colWidth+ "as");
     } else {
       var colWidth = Math.floor((window.innerWidth / window.devicePixelRatio) / colcol);
 
       colWidth = "width:" + colWidth + "px;"
       document.getElementsByClassName('li-item')[i].style = colWidth;
+      console.log(colWidth+ "sa");
 
     }
 
