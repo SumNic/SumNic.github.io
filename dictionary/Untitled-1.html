@@ -128,7 +128,7 @@ var win = "height:" + innerwin + "px";
 console.log(innerwin);
 document.getElementById('list').setAttribute("style", win);
 
-var heightcolumn = Math.floor(innerwin / 30);
+var heightcolumn = Math.floor(innerwin / 30) / window.devicePixelRatio;
 // console.log(heightcolumn);
 var collistHeight = "grid-template-rows: repeat(" + heightcolumn + ", 1fr)";
 // document.getElementById('list').setAttribute("style", collistHeight);
