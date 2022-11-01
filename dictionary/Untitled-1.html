@@ -21,6 +21,12 @@
     </div>
     
     
+    <div class="btn_mini">
+      
+      <button onclick="myfunction(this)" id="1" class="btn">Д</button>
+      <button onclick="myfunctionRes()" id="res" class="btn">О</button>
+    
+    </div>   
     <div class="btn_one">
       
       <button onclick="myfunction(this)" id="1" class="btn">Добавить</button>
@@ -122,7 +128,7 @@ var heightcolumn = Math.floor(innerwin / 30);
 console.log(heightcolumn);
 var collist = "grid-template-rows: repeat(" + heightcolumn + ", 1fr)";
 document.getElementById('list').setAttribute("style", collist);
-var colcol = arrey.length / heightcolumn;
+var colcol = Math.floor(arrey.length / heightcolumn);
 console.log(colcol);
 var collist = "grid-template-columns: (" + colcol + ", 1fr)"; 
 </script>

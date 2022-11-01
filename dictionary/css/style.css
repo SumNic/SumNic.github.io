@@ -394,7 +394,27 @@ body {
     color: black;
     width: 100%;
     margin: auto;
-}   
+}  
+
+@media screen and (max-width: 375px) {
+    .btn_one {
+        display: none;
+    }
+    .btn_mini {
+        display: inline-block;
+    }
+    
+}
+
+@media screen and ( min-width: 376px) {
+    .btn_mini {
+        display: none;
+        
+    }
+    .btn_one {
+        display: inline-block;
+    }
+}
 
 header {
     position: fixed;
@@ -431,10 +451,6 @@ footer {
     border-radius: 10px 10px 10px 10px;
 }
 
-.btn_one {
-    display: inline-block;
-    border: 1px solid #b3d4fc;
-}
 
 .btn {
     padding: 5px;
@@ -485,7 +501,7 @@ footer {
 
 .liste {
     display: grid;
-    grid-template-columns: (4, 1fr);
+    
     grid-auto-flow: column;
     /* gap: 10px; */
     /* background-color: #8cad71; */
