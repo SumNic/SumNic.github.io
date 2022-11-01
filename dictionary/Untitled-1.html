@@ -142,13 +142,13 @@ var colcol = Math.ceil(arrey.length / heightcolumn);
 
 if((window.innerWidth/375)>colcol) {
   
-  var colcol1 = Math.ceil(window.innerWidth/375);
+  var colcol1 = Math.floor(window.innerWidth/375);
   console.log(colcol1 + "-1");
   var collistWidth = "grid-template-columns: repeat(" + colcol1 + ", 1fr); " + collistHeight;
   document.getElementById('list').setAttribute("style", collistWidth);
 } else {
   
-  var colcol2 = Math.ceil(arrey.length / heightcolumn);
+  var colcol2 = Math.floor(arrey.length / heightcolumn);
   console.log(colcol2 + "-2");
   var collistWidth = "grid-template-columns: repeat(" + colcol2 + ", 1fr); " + collistHeight; 
   document.getElementById('list').setAttribute("style", collistWidth);
