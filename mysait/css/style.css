@@ -392,6 +392,7 @@ body {
     line-height: 1.2;
     font-weight: normal;
     color: black;
+    background-color: #cedace;
 }  
 /* 
   background-image: url(../images/Logotip-Rodnoj-parti-730x7301.png);
@@ -404,9 +405,10 @@ body {
 */
 .header{
     position: fixed;
-    top: 0;
+    top: 10px;
     left: center;
     width: 100%;
+    
 }
 
 .header__wrapper{
@@ -415,12 +417,14 @@ body {
     flex-wrap: nowrap;
     height: 50px;
     margin: 0 auto;
+    
 }
 
 @media  screen and (min-width: 452px) {
     .header__logo-pc {
         display: flex;
         width: 122px;
+        height: 50px;
         margin-right: 20px;
     }
     .header__logo-mobile {
@@ -432,6 +436,11 @@ body {
     .header__logo-pc {
       display: none;
     }
+
+    .middle__menu {
+        display: none;
+    }
+
     .header__logo-mobile {
       display: flex;
       
@@ -441,7 +450,13 @@ body {
   } 
 
 .header__logo-pic{
-    padding: 5px 0;
+    width: 122px;
+    height: 48px;
+}
+
+.header__logo-link{
+    padding: 0;
+    margin: 1px 0 0 3px;
 }
 
 
@@ -449,9 +464,31 @@ body {
 
 .header__menu{
     width: 546px;
+    height: 50px;
+    /* background-color: white; */
+    
+    
+    
+    
 }
 
+.header__list {
+    
+    height: 50px;
+
+}
+
+#header__item_1 {
+    border-radius: 20px 0 0 0;
+}
+
+#header__item_4 {
+    border-radius: 0 20px 0 0;
+}
+
+
 .header__item{
+    
     float: left;
     height: 50px;
     text-align: center;
@@ -484,13 +521,14 @@ body {
     max-width: 830px;
     margin: 0 auto;
     height: 100vh;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    border: 1px solid rgb(61, 90, 170);
+    padding-top: 60px;
+    padding-bottom: 60px;
+    /* border: 1px solid rgb(61, 90, 170); */
     display: flex;
     flex-wrap: nowrap;
     /* align-items: stretch; */
     /* position: relative; */
+    
 }
 
 /* .middle__menu{
@@ -501,7 +539,7 @@ body {
 @media  screen and (min-width: 452px) {
     .middle__menu {
         min-width: 122px;
-        border: 1px solid red;
+        /* border: 1px solid red; */
         margin-right: 20px;
     }
     
@@ -511,14 +549,21 @@ body {
     
     .middle__menu {
         width: 50px;
-        border: 1px solid red;
+        /* border: 1px solid red; */
         margin-right: 20px;
     }
   }
 
+.middle__list {
+    
+}
+
 .middle__item{
     width: 100%;
-    height: 50px;
+    height: 40px;
+    padding-left: 15px;
+    
+    padding-top: 15px;
 }
 
 .middle__link{
@@ -532,6 +577,7 @@ body {
     border: 1px solid red;
     position: relative;
     width: 546px;
+    background-color: white;
 }
 
 .main__text{
@@ -594,26 +640,30 @@ body {
 
 .footer{
     position: fixed;
-    bottom: 0;
+    bottom: 10px;
     left: center;
     width: 100%;
+    
 }
 
 .footer__{
     display: block;
     border: 1px solid green;
-    max-width: 830px;
+    max-width: 546px;
     
     margin: 0 auto;
     height: 50px;
     background-color: #b1d6b2;
     text-align: center;
+    border-radius: 0 0 20px 20px;
+    
 }
 
 .footer__prices{
     width: 100%;
     /* display: flex; */
     text-align: center;
+    
 }
 
 .footer__link{
