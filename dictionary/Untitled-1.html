@@ -122,27 +122,27 @@
     location.reload();
   }
 
-var innerwin = (window.innerHeight - 80) / window.devicePixelRatio;
-var win = "height:" + innerwin + "px";
+var hP = window.innerHeight / window.devicePixelRatio;
+var wP = window.innerWidth / window.devicePixelRatio;
 
-console.log(innerwin);
+var win = "height:" + hP + "px";
+
+console.log(hP);
 document.getElementById('list').setAttribute("style", win);
 
-var heightcolumn = Math.floor(innerwin / 30 / window.devicePixelRatio);
+var heightcolumn = Math.floor(hP / 30);
 // console.log(heightcolumn);
 var collistHeight = "grid-template-rows: repeat(" + heightcolumn + ", 1fr)";
 // document.getElementById('list').setAttribute("style", collistHeight);
 
 
-document.getElementById('demo').innerHTML = collistHeight + " " + window.innerHeight + " " + window.innerWidth +
-" " + window.screen.availHeight + " " + window.screen.availWidth + " " + window.devicePixelRatio;
-
+document.getElementById('demo').innerHTML = hP;
 
 var colcol = Math.ceil(arrey.length / heightcolumn);
 
-if((window.innerWidth/375)>colcol) {
+if((wP/375)>colcol) {
   
-  var colcol = Math.ceil(window.innerWidth/375);
+  var colcol = Math.ceil(wP/375);
   console.log(colcol + "-1");
   var collistWidth = "grid-template-columns: repeat(" + colcol + ", 1fr); " + collistHeight;
   document.getElementById('list').setAttribute("style", collistWidth);
@@ -155,17 +155,18 @@ if((window.innerWidth/375)>colcol) {
 
 }
 
+console.log(wP, hP);
 for (i=0; i < fLen; i++) {
-    if ((window.innerWidth / window.devicePixelRatio)<600) {
-      var colWidth = "width:" + Math.floor(window.innerWidth / window.devicePixelRatio) + "px;";
-      document.getElementsByClassName('li-item')[i].style = colWidth;
-      console.log(colWidth+ "as");
+    if ((wP)<600) {
+      var colWi = "width:" + Math.floor(wP) + "px;";
+      document.getElementsByClassName('li-item')[i].style = colWi;
+      console.log(colWi + "as");
     } else {
-      var colWidth = Math.floor((window.innerWidth / window.devicePixelRatio) / colcol);
+      var colWidth = Math.floor((wP) / colcol);
 
-      colWidth = "width:" + colWidth + "px;"
-      document.getElementsByClassName('li-item')[i].style = colWidth;
-      console.log(colWidth+ "sa");
+      colW = "width:" + colWidth + "px;"
+      document.getElementsByClassName('li-item')[i].style = colW;
+      console.log(colW + "sa");
 
     }
 
