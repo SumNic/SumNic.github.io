@@ -5,13 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Json</title>
-    <script type="text/javascript" src="Data.json"></script>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <p id="demo"></p>
-<script>
-var arrey = JSON.parse(data);
-document.getElementById("demo").innerHTML = arrey;
+    
+    <section class="top-nav">
+      <div>
+        Logo Here
+      </div>
+      <input id="menu-toggle" type="checkbox" />
+      <label class='menu-button-container' for="menu-toggle">
+      <div class='menu-button'></div>
+    </label>
+      <ul class="menu">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+        <li>Five</li>
+      </ul>
+    </section>
+  
+  <h2>Resize window to collapse menu</h2>
+
+  <section class="middle">
+	
+	<nav class="middle__menu">
+			
+		<ul class="middle__list">
+			<li class="middle__item">
+				<a href="#!" class="middle__link">Моя страница</a>
+			</li>
+			<li class="middle__item">
+				<a href="#!" class="middle__link">Новости</a>
+			</li>
+			<li class="middle__item">
+				<a href="#!" class="middle__link">Сообщения</a>
+			</li>												
+		</ul>
+	</nav>
+	
+	
+	<div class="main__screen">
+		<div id="nav-btn"></div>
+		
+		<input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+        	<div class='menu-button'></div>
+        </label>
+
+
+
+		<div class="middle__logo">
+			<img src="./images/Logotip-Rodnoj-parti-500x500.png" alt="Большой логотип" class="middle__logo-pic">
+		</div>
+		
+		<div class="main__text">
+			
+			
+			
+			<h1>Привет, Вселенная!</h1>
+			<h2>Я создаю свой проект, который принесет мне очень много денег</h2>
+			<h2>Я уверен, что у меня всё получится и благодаря этому проекту я стану сказочно богат.</h2>
+			
+			<p id="mapholder">ффф</p>
+			
+			<script>
+			
+			function showPosition(position) {
+				var latlon = position.coords.latitude + "," + position.coords.longitude;
+			  
+				var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+				+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_KEY";
+			  
+				document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+			  }
+			</script>
+		</div>
+	</div>
+	
+</section>
+
+    
 
 </script>
     
