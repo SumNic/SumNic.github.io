@@ -487,11 +487,12 @@ body {
 
 .header__item{
     /* float: left; */
+    
     height: 50px;
     text-align: center;
     background-color: #b1d6b2;
     border: 1px solid black;
-    /* width: 25%; */
+    width: 25%;
     flex-grow: 1;
 }
 
