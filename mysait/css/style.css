@@ -850,7 +850,7 @@ h2 {
       padding: 0.5em 0;
       width: 100%;
       color: white;
-      background-color: #cedace;
+      background-color: #f4f7f4;
     }
     .list-mobile > li:not(:last-child) {
       border-bottom: 1px solid #444;
