@@ -13,12 +13,12 @@
 <header class="header">
 	
 		<div class="header__wrapper">
-			<div class="header__logo-pc" style="visibility: hidden">
+			<div class="header__logo-pc">
 				<a href="home.html" class="header__logo-link">
 					<img src="./images/svg/logo.svg" alt="Родная партия" class="header__logo-pic">
 				</a>
 			</div>
-			<div class="header__logo-mobile" style="visibility: hidden">
+			<div class="header__logo-mobile">
 				<a href="home.html" class="header__logo-link">
 					<img src="./images/svg/Logotip-Rodnoj-parti-40x40.svg" alt="Родная партия" class="header__logo-pic">
 				</a>
@@ -74,7 +74,7 @@
 	<div class="main__screen">
 
 		<div class="middle__logo">
-			<img src="./images/Logotip-Rodnoj-parti-500x500-home.png" alt="Большой логотип" class="middle__logo-pic">
+			<img src="./images/Logotip-Rodnoj-parti-500x500-home.png" alt="Большой логотип" class="middle__logo-pic" id="logo">
 		</div>
 		
 		
@@ -96,12 +96,32 @@
 
 	</div>
 	
-<script>
 
-
-</script>	
 	
 </footer>
+
+<script>
+    var hP = window.innerHeight -120;
+    var wP = window.innerWidth - 20;
+    
+    var hP_S = hP / wP;
+
+    console.log(hP, wP);
+    
+    if (hP_S > 1, wP < 500) {
+        var win = "width:" + wP + "px";
+        document.getElementById('logo').setAttribute("style", win);
+        console.log(wP, win);
+
+    } else if (hP_S < 1, hP < 500) {
+        var win = "height:" + (hP) + "px";
+        document.getElementById('logo').setAttribute("style", win);
+        console.log(hP, win);
+    }
+
+</script>	
+
+
 
 
 

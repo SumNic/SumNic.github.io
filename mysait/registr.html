@@ -74,7 +74,7 @@
 	<div class="main__screen">
 
 		<div class="middle__logo">
-			<img src="./images/Logotip-Rodnoj-parti-500x500.png" alt="Большой логотип" class="middle__logo-pic">
+			<img src="./images/Logotip-Rodnoj-parti-500x500.png" alt="Большой логотип" class="middle__logo-pic" id="logo">
 		</div>
 		
 		<div class="main__text">
@@ -121,13 +121,29 @@
 		</div>
 
 	</div>
-	
-<script>
 
+</footer>
+
+<script>
+    var hP = window.innerHeight -120;
+    var wP = window.innerWidth - 20;
+    
+    var hP_S = hP / wP;
+
+    console.log(hP, wP);
+    
+    if (hP_S > 1, wP < 500) {
+        var win = "width:" + wP + "px";
+        document.getElementById('logo').setAttribute("style", win);
+        console.log(wP, win);
+
+    } else if (hP_S < 1, hP < 500) {
+        var win = "height:" + (hP) + "px";
+        document.getElementById('logo').setAttribute("style", win);
+        console.log(hP, win);
+    }
 
 </script>	
-	
-</footer>
 
 
 

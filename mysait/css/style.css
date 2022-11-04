@@ -400,6 +400,7 @@ body {
     top: 5px;
     left: center;
     width: 100%;
+    z-index: 1;
 }
 
 .header__wrapper{
@@ -521,9 +522,7 @@ body {
 }
 
 .middle__item{
-    width: 100%;
     height: 40px;
-    padding-left: 10px;
     padding-top: 15px;
 }
 
@@ -559,6 +558,7 @@ body {
 .middle__logo-pic{
     max-width: 100%;
     display: block;
+    /* z-index: 0; */
 }
 
 .footer{
@@ -641,7 +641,7 @@ h2 {
   }
   
   .middle__list > li {
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     overflow: hidden;
   }
   
