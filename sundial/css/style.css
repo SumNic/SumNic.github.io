@@ -406,7 +406,17 @@ body {
     background-size: 100%;
     background-origin: content-box;
     
-    
-
 }
 
+.sol {
+        z-index: +1;
+        border: 2px solid red;
+        border-radius: 30px;
+        background-color: yellow;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}

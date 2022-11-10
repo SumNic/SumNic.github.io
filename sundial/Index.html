@@ -10,6 +10,10 @@
  <body>
     <div class="wrapper">
         Укажите год:  <input type="text" id="data">
+        <div class="sol">
+            
+        </div>
+        
         <p id="demo"></p>
 
     </div>
@@ -17,6 +21,9 @@
     
 
     <script>
+var Earth = "<img id=\'earth\' src=\'img/Earth.png\' style=\'float: right\'>";
+document.getElementById('demo').innerHTML = Earth;
+
                
 (function() {
   document.querySelector('input').addEventListener('keydown', function(e) {
