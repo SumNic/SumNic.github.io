@@ -396,14 +396,15 @@ body {
 }  
 
 .wrapper {
-    width: 800px;
+    max-width: 800px;
     height: 100vh;
     margin: 0 auto;
     background-color: #cedace;
     background-image: url(../img/EarthsOrbit_en.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 800px;
+    background-size: 100%;
+    background-origin: content-box;
     
     
 
