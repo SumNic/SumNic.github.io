@@ -397,7 +397,7 @@ body {
 
 .wrapper {
     max-width: 800px;
-    height: 100vh;
+    height: 800px;
     margin: 0 auto;
     background-color: #cedace;
     background-image: url(../img/EarthsOrbit_en.png);
@@ -405,6 +405,7 @@ body {
     background-position: center;
     background-size: 100%;
     background-origin: content-box;
+
     
 }
 
@@ -416,7 +417,17 @@ body {
     width: 60px;
     height: 60px;
     position: absolute;
-    left:50%;
+      left:50%;
     top:50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); 
+
+
+}
+
+#earth {
+    position: absolute;
+    
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%,-50%); 
 }

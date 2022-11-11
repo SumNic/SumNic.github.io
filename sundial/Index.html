@@ -8,20 +8,50 @@
   <link rel="stylesheet" href="css/style.css">
  </head>
  <body>
-    <div class="wrapper">
+    <div class="wrapper" id="wrap">
         Укажите год:  <input type="text" id="data">
-        <div class="sol">
+        <div class="sol" id="sole">
             
         </div>
         
         <p id="demo"></p>
+		<p id="demo1"></p>
 
     </div>
 
     
 
     <script>
-var Earth = "<img id=\'earth\' src=\'img/Earth.png\' style=\'float: right\'>";
+		var style;
+		
+		
+
+		var wP = document.getElementById('wrap').clientWidth;
+		var hP = document.getElementById('wrap').clientHeight;
+		console.log(wP,hP);
+		document.getElementById('sole').style = "top:" + hP/2 + "px";
+		
+
+
+
+
+const d = new Date();
+console.log(d);
+
+if (d == new Date(2020, 10,11)) {
+
+	console.log('good');
+} else {
+	console.log('no good');
+	w = wP/2 + (wP/3.3) * Math.cos(0);
+	h = hP/2 -hP/3.3 * Math.sin(0);
+	console.log(w);
+	// Math.PI
+
+	style = "left:" + w + "px;top:" + h + "px ";
+}
+
+var Earth = "<img id=\'earth\' src=\'img/Earth.png\' style=" + style + " >";
 document.getElementById('demo').innerHTML = Earth;
 
                
