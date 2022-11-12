@@ -392,21 +392,24 @@ body {
     line-height: 1.2;
     font-weight: normal;
     color: black;
+    background-color: #cedace;
+    overflow: overlay;
     
 }  
 
 .wrapper {
+    /* display: flex; */
     max-width: 800px;
-    height: 800px;
+    /* height: 800px; */
     margin: 0 auto;
-    background-color: #cedace;
-    background-image: url(../img/EarthsOrbit_en.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    background-origin: content-box;
-
     
+    
+    
+    
+}
+
+.date__input{
+    height: 40px;
 }
 
 .sol {
@@ -418,10 +421,20 @@ body {
     height: 60px;
     position: absolute;
       left:50%;
-    top:50%;
+    top: 50%;
     transform: translate(-50%,-50%); 
+}
 
-
+.result {
+    /* height: 800px; */
+    /* width: 800px; */
+    background-image: url(../img/EarthsOrbit_en.png);
+    background-repeat: no-repeat;
+    /* padding: 10px; */
+    background-position: top;
+    background-size: 100%;
+    /* background-origin: content-box; */
+    z-index: +2;
 }
 
 #earth {
@@ -430,4 +443,12 @@ body {
     width: 30px;
     height: 30px;
     transform: translate(-50%,-50%); 
+}
+
+.said {
+    height: 300px;
+    width: 300px;
+    /* float: left; */
+    border: 1px solid red;
+    top: 0;
 }

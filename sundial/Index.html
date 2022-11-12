@@ -9,43 +9,60 @@
  </head>
  <body>
     <div class="wrapper" id="wrap">
-        Укажите год:  <input type="text" id="data">
+		<div class="date__input">
+			Укажите дату:  <input type="date" id="data">
+
+		</div>
+        
         <div class="sol" id="sole">
             
         </div>
+        <div id="result" class="result">
+			<p id="demo"></p>
+			<p id="demo1"></p>
+
+		</div>
+		<div class="said">
+
+		</div>
         
-        <p id="demo"></p>
-		<p id="demo1"></p>
 
     </div>
+	
 
     
 
-    <script>
-		var style;
-		
-		
+<script>
+	var style, wP, wW;
 
-		var wP = document.getElementById('wrap').clientWidth;
-		var hP = document.getElementById('wrap').clientHeight;
-		console.log(wP,hP);
-		document.getElementById('sole').style = "top:" + hP/2 + "px";
 		
 
 
+function myFunction() {
+
+	// / window.devicePixelRatio
+		wW = window.innerWidth;
+		wP = document.getElementById('wrap').clientWidth;
+		console.log(wP);
+		document.getElementById('sole').style = "top:" + (wP/2+40) + "px";
+		document.getElementById('result').style = "height:" + wP + "px";
+		const d = new Date();
+		console.log(d);
+		
+		
 
 
-const d = new Date();
-console.log(d);
+
+
 
 if (d == new Date(2020, 10,11)) {
 
 	console.log('good');
 } else {
 	console.log('no good');
-	w = wP/2 + (wP/3.3) * Math.cos(0);
-	h = hP/2 -hP/3.3 * Math.sin(0);
-	console.log(w);
+	w = wW/2 + (wP/3.3) * Math.cos(0);
+	h = wP/2 +40 - wP/3.3 * Math.sin(0);
+	console.log(w, h);
 	// Math.PI
 
 	style = "left:" + w + "px;top:" + h + "px ";
@@ -88,13 +105,36 @@ document.getElementById('demo').innerHTML = Earth;
 	i++;
 }
 
-	
-    
-      
-
     }
   });
 })();
+
+}
+
+myFunction ();
+
+window.addEventListener('resize', function (event) {
+		console.log('resize');
+		myFunction ();
+		
+			
+			
+
+
+
+
+
+		}, true);
+
+		window.addEventListener('overflow', function() {
+    console.log('scollbar is visible');
+});
+window.addEventListener('underflow', function() {
+    console.log('scollbar is invisible');
+});
+
+
+
 
 
 /* solar.js -- Solar position ported source
