@@ -15,7 +15,7 @@
 		</div>
         
         <div class="sol" id="sole">
-            
+            <img src="img/Sol.png" alt="Солнце">
         </div>
         <div id="result" class="result">
 			<p id="demo"></p>
@@ -41,9 +41,9 @@
 function myFunction() {
 
 	// / window.devicePixelRatio
-		wW = window.innerWidth;
+		wW = document.documentElement.clientWidth;
 		wP = document.getElementById('wrap').clientWidth;
-		console.log(wP);
+		console.log(wW, wP);
 		document.getElementById('sole').style = "top:" + (wP/2+40) + "px";
 		document.getElementById('result').style = "height:" + wP + "px";
 		const d = new Date();
@@ -126,12 +126,9 @@ window.addEventListener('resize', function (event) {
 
 		}, true);
 
-		window.addEventListener('overflow', function() {
-    console.log('scollbar is visible');
-});
-window.addEventListener('underflow', function() {
-    console.log('scollbar is invisible');
-});
+		window.addEventListener('orientationEvent', function() {
+			console.log('good event');
+}, false);
 
 
 
