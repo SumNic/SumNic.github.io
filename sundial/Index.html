@@ -33,10 +33,10 @@
     
 
 <script>
-	var style, wP, wW;
+	var style, wP, wW, angle;
 
 		
-
+	myFunction ();
 
 function myFunction() {
 
@@ -46,89 +46,141 @@ function myFunction() {
 		console.log(wW, wP);
 		document.getElementById('sole').style = "top:" + (wP/2+40) + "px";
 		document.getElementById('result').style = "height:" + wP + "px";
-		const d = new Date();
-		console.log(d);
+
+		var d = new Date();
+
+		function Corner (){
+
+	 
+
+
+	
 		
+	var today = Date.parse(d);
+    var todayDay = today/1000/60/60/24;
+	var yearDay = Math.floor(todayDay/365.24236-30)+2000;
+	
+
+	var year2000 = Date.parse(new Date(2000, 0, 01, 12, 0, 0, 0))/1000/60/60/24;
+	var autumnEquinox = year2000 + 78.814 + 92.7388133 + 93.65911892 + 365.24236 * (yearDay - 2000);
+	
+	var corDay = (todayDay - autumnEquinox)*360/365.24236;
+	console.log('corDay', corDay);
+
+	
 		
 
 
 
-
-
-if (d == new Date(2020, 10,11)) {
-
-	console.log('good');
-} else {
-	console.log('no good');
-	w = wW/2 + (wP/3.3) * Math.cos(0);
-	h = wP/2 +40 - wP/3.3 * Math.sin(0);
+	w = wW/2 + (wP/3.3) * Math.cos(corDay * Math.PI / 180);
+	h = wP/2 +40 - wP/3.3 * Math.sin(corDay * Math.PI / 180);
 	console.log(w, h);
 	// Math.PI
 
 	style = "left:" + w + "px;top:" + h + "px ";
+
+
+	var Earth = "<img id=\'earth\' src=\'img/Earth.png\' style=" + style + " >";
+	document.getElementById('demo').innerHTML = Earth;
+
 }
 
-var Earth = "<img id=\'earth\' src=\'img/Earth.png\' style=" + style + " >";
-document.getElementById('demo').innerHTML = Earth;
+Corner ();
+
+}
+
+
+
+
 
                
 (function() {
   document.querySelector('input').addEventListener('keydown', function(e) {
     if (e.keyCode === 13) {
       // можете делать все что угодно со значением текстового поля
-      var dateEnter = this.value;
-      console.log(dateEnter);
+	
+
+
+    //   var dateEnter = Math.floor(Date.parse(this.value)/1000/60/60/24/365.24236-30)+2000;
+    //   console.log("sdfsdf", dateEnter);
 
     
-    var date2000 = new Date(2000, 0, 01, 12, 0, 0, 0);
+    // var date2000 = new Date(2000, 0, 01, 12, 0, 0, 0);
 
-    var d1 = Date.parse(date2000);
-    var date20001 = d1/1000/60/60/24;
-    var x = 0;
-    for (i=0; i < 4;) {
-		if (i==0) {
-			x = 0;
-		} else if (i==1){ 
-			x += 92.7388133;
-		} else if (i==2){ 
-			x += 93.65911892;
-		} else if (i==3){ 
-			x += 89.86079102;
-		}
+    // var d1 = Date.parse(date2000);
+    // var date20001 = d1/1000/60/60/24;
+	
+	const d = this.value;
+	var tod = Date.parse(d);
+	var year20 = Date.parse(new Date(2000, 0, 01, 12, 0, 0, 0))
+	var y = Date.parse(new Date(d));
+	console.log("функция", y, year20);
+	
+
+
+	var today = Date.parse(d);
+    var todayDay = today/1000/60/60/24;
+	var yearDay = Math.floor(todayDay/365.24236-30)+2000;
+	
+
+	var year2000 = Date.parse(new Date(2000, 0, 01, 12, 0, 0, 0))/1000/60/60/24;
+	var autumnEquinox = year2000 + 78.814 + 92.7388133 + 93.65911892 + 365.24236 * (yearDay - 2000);
+	
+	var corDay = (todayDay - autumnEquinox)*360/365.24236;
+	console.log('corDay', corDay);
+
+	
+		
+
+
+
+	w = wW/2 + (wP/3.3) * Math.cos(corDay * Math.PI / 180);
+	h = wP/2 +40 - wP/3.3 * Math.sin(corDay * Math.PI / 180);
+	console.log(w, h);
+	// Math.PI
+
+	style = "left:" + w + "px;top:" + h + "px ";
+
+
+	var Earth = "<img id=\'earth\' src=\'img/Earth.png\' style=" + style + " >";
+	document.getElementById('demo').innerHTML = Earth;
+
+
+    // var x = 0;
+    // for (i=0; i < 4;) {
+	// 	if (i==0) {
+	// 		x = 0;
+	// 	} else if (i==1){ 
+	// 		x += 92.7388133;
+	// 	} else if (i==2){ 
+	// 		x += 93.65911892;
+	// 	} else if (i==3){ 
+	// 		x += 89.86079102;
+	// 	}
 	
 	
-	var date = date20001 + 78.814 + x + 365.24236 * (dateEnter - 2000);
-    var dateMili =  date * 24 *60 *60 *1000;
-    var dateSolNorm = new Date(dateMili);
-    console.log(dateSolNorm);
+	// var date = date20001 + 78.814 + x + 365.24236 * (dateEnter - 2000);
+    // var dateMili =  date * 24 *60 *60 *1000;
+    // var dateSolNorm = new Date(dateMili);
+    // console.log(dateSolNorm);
 
-	i++;
-}
+	// i++;
+	// }
 
     }
   });
 })();
 
-}
 
-myFunction ();
+
+
 
 window.addEventListener('resize', function (event) {
 		console.log('resize');
 		myFunction ();
-		
-			
-			
-
-
-
-
 
 		}, true);
 
-		window.addEventListener('orientationEvent', function() {
-			console.log('good event');
-}, false);
 
 
 
