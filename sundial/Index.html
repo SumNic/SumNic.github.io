@@ -11,8 +11,9 @@
     <div class="wrapper" id="wrap">
 		<div class="date__input">
 			Укажите дату:  <input type="date" id="data">
-
+			<button type="button" onclick="FunctionEnter()">Выбрать</button>
 		</div>
+
         
         <div class="sol" id="sole">
             <img src="img/Sol.png" alt="Солнце">
@@ -92,15 +93,15 @@ Corner ();
 
 
 
-
                
 (function() {
-  document.querySelector('input').addEventListener('keydown', function(e) {
-    if (e.keyCode === 13) {
+  document.querySelector('input').addEventListener('keydown', function(Enter) {
+    if (Enter.keyCode === 13) {
       // можете делать все что угодно со значением текстового поля
 	
+	//   FunctionEnter();
 
-
+	
     //   var dateEnter = Math.floor(Date.parse(this.value)/1000/60/60/24/365.24236-30)+2000;
     //   console.log("sdfsdf", dateEnter);
 
