@@ -20,11 +20,11 @@
         </div>
         <div id="result" class="result">
 			<p id="demo"></p>
-			<p id="demo1"></p>
+			
 
 		</div>
 		<div class="said">
-
+			<p id="demo1"></p>
 		</div>
         
 
@@ -168,7 +168,10 @@ Corner ();
 	// i++;
 	// }
 
-    }
+    } else {
+		console.log(Enter.keyCode);
+		document.getElementById('demo1').innerHTML = Enter.keyCode;
+	}
   });
 })();
 
