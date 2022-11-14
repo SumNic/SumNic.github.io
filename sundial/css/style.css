@@ -434,7 +434,7 @@ body {
 .result {
     /* height: 800px; */
     /* width: 800px; */
-    background-image: url(../img/EarthsOrbit_en.png);
+    background-image: url(../img/EarthsOrbit_en2.png);
     background-repeat: no-repeat;
     /* padding: 10px; */
     background-position: top;
@@ -449,12 +449,19 @@ body {
     width: 30px;
     height: 30px;
     transform: translate(-50%,-50%); 
+    
 }
 
 .said {
     height: 300px;
     width: 100%;
     /* float: left; */
-    border: 1px solid red;
+   
     top: 0;
+}
+
+#graph {
+    /* position: absolute; */
+    z-index: +4;
+    
 }
