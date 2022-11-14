@@ -73,7 +73,7 @@
 		   	ctx.beginPath();
 
 		for (i=0; i<12; i++) {
-			var year01 = Date.parse(new Date(yearDay, i, 20, 0, 0, 0, 0))/1000/60/60/24;
+			var year01 = Date.parse(new Date(yearDay, i, 1, 0, 0, 0, 0))/1000/60/60/24;
 			
 			var cor01 = (year01 - autumnEquinox)*360/365.24236;
 			w01 = wP/2 + wP/3 * Math.cos(cor01 * Math.PI / 180);
