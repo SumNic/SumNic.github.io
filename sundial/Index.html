@@ -11,8 +11,9 @@
     <div class="wrapper" id="wrap">
 		
 		<div class="date__input">
-			Укажите дату:  <input type="date" id="data">
-			<button type="button" onclick="FunctionEnter()">Выбрать</button>
+			<label for="data">Укажите дату:</label>
+			<input type="date" id="data" name="data">
+			<button type="button" onclick="FunctionEnter()" class="buttons">Выбрать</button>
 		</div>
 
         
@@ -26,7 +27,15 @@
 
 		</div>
 		<div class="said">
-			<h1></h1>
+			<h1>Движение Земли вокруг Солнца</h1>
+			<p class="text">
+				<br>На данной схеме Вы видите положение Земли относительно Солнца в данный момент. <br>
+				<br>Также Вы можете выбрать любую дату и увидеть, в каком положении будет находиться Земля относительно Солнца.<br>
+				<br><span style="color:rgb(206, 81, 81)">Красным цветом </span> обозначены дни осеннего и весеннего равноденствия, а также дни зимнего и летнего солнцестояния.<br>
+				<br><span style="color:rgb(139, 127, 53)">Perihelion </span>(перигелий) - ближайшая к Солнцу точка орбиты Земли (Земля наиболее близко к Солнцу).<br>
+				<br><span style="color:rgb(139, 127, 53)">Aphelion </span>(афелий) - наиболее удаленная от Солнца точка обриты Земли.<br>
+				<br>До ближайшего дня <span id="day1" style="font-weight:bold"></span> осталось <span id="sumday1" style="font-weight:bold"></span><br>
+			</p>
 		</div>
         
 
@@ -38,6 +47,7 @@
 <script>
 	var style, wP, wW, angle;
 	var d = new Date();
+	
 
 		
 	myFunction ();
@@ -45,23 +55,38 @@
 	function myFunction() {
 		wW = document.documentElement.clientWidth;
 		wP = document.getElementById('wrap').clientWidth;
-		console.log(wW, wP);
-		document.getElementById('sole').style = "top:" + (wP/2+33) + "px";
+		
+		document.getElementById('sole').style = "top:" + (wP/2+35) + "px";
 		document.getElementById('result').style = "height:" + wP + "px";
-		
-		// document.getElementById('graph').clientHeight = "height:" + wP + "px;width:" + wP + "px";
-		
-		var today = Date.parse(d);
-		var todayDay = today/1000/60/60/24;
-		var yearDay = Math.floor(todayDay/365.24236-30)+2000;
-		var year2000 = Date.parse(new Date(2000, 0, 01, 12, 0, 0, 0))/1000/60/60/24;
+
+		var today = Date.parse(d); //милисескунды указанной даты
+		var todayDay = today/1000/60/60/24; //колчество дней указанной даты
+		var yearDay = Math.floor(todayDay/365.24236-30)+2000; //год указанной даты
+		var year2000 = Date.parse(new Date(2000, 0, 01, 12, 0, 0, 0))/1000/60/60/24; //колечество дней 2000 года
+		//количество дней до осеннего равноденствия с 2000 года
 		var autumnEquinox = year2000 + 78.814 + 92.7388133 + 93.65911892 + 365.24236 * (yearDay - 2000);
-		var corDay = (todayDay - autumnEquinox)*360/365.24236;
+		var toEquinox = todayDay - autumnEquinox;
+		var corDay = (toEquinox)*360/365.24236;
 		w = wW/2 + (wP/3.3) * Math.cos(corDay * Math.PI / 180);
 		h = wP/2 +40 - wP/3.3 * Math.sin(corDay * Math.PI / 180);
 		style = "left:" + w + "px;top:" + h + "px ";
 		var Earth = "<img id=\'earth\' src=\'img/Earth.png\' style=" + style + " >";
 		document.getElementById('demo').innerHTML = Earth;
+
+		
+		console.log(toEquinox);
+		if (toEquinox < 89.86079102) {
+			document.getElementById('day1').innerHTML = "зимнего солнцестояния";
+			var decDay = 89.86079102 - toEquinox;
+			var intDay = Math.floor(decDay);
+			var Hour =  (decDay - intDay)*24;
+			var intHour = Math.floor(Hour);
+			var Minutes = (Hour - intHour)*60;
+			var intMinutes = Math.floor(Minutes)
+
+			document.getElementById('sumday1').innerHTML = intDay + "дней " + intHour + "ч. " + intMinutes + "мин.";
+
+		} 
 
 		// разметка месяцев 
 
@@ -110,23 +135,20 @@
 
 			wEq2 = wP/2 + wP/3 * Math.cos(corEq * Math.PI / 180);
 			hEq2 = wP/2 - wP/3 * Math.sin(corEq * Math.PI / 180);
-		
 
-
-			
 			ctx.moveTo(wEq1, hEq1);
 			ctx.lineTo(wEq2, hEq2);
-			ctx.strokeStyle = 'red'; // тёмно-синий цвет
-			ctx.lineWidth = 1; // толщина линии в 5px
+			ctx.strokeStyle = 'red'; 
+			ctx.lineWidth = 1; 
 
 		}
 		ctx.stroke();
 	}
+
 	function FunctionEnter() {
 		d = document.getElementById('data').value
 		myFunction();
 	}
-
 
 	window.addEventListener('resize', function (event) {
 		console.log('resize');
