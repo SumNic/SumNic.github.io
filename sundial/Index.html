@@ -31,32 +31,27 @@
 			<p class="text">
 				<br>На данной схеме Вы видите положение Земли относительно Солнца в данный момент. <br>
 				<br>Также Вы можете выбрать любую дату и увидеть, в каком положении будет находиться Земля относительно Солнца.<br>
-				<br><span style="color:rgb(206, 81, 81)">Красным цветом </span> обозначены дни осеннего и весеннего равноденствия, а также дни зимнего и летнего солнцестояния.<br>
+				<br><span style="color:red">Красным цветом </span> обозначены дни осеннего и весеннего равноденствия, а также дни зимнего и летнего солнцестояния.<br>
 				<br><span style="color:rgb(139, 127, 53)">Perihelion </span>(перигелий) - ближайшая к Солнцу точка орбиты Земли (Земля наиболее близко к Солнцу).<br>
 				<br><span style="color:rgb(139, 127, 53)">Aphelion </span>(афелий) - наиболее удаленная от Солнца точка обриты Земли.<br>
-				<br>До ближайшего дня <span id="day1" style="font-weight:bold"></span> осталось <span id="sumday1" style="font-weight:bold"></span><br>
+				<br>Указанное время может незначительно отличаться:<br>
 			</p>
+			<p id="textE"></p>
 		</div>
-        
-
     </div>
-	
 
-    
 
 <script>
-	var style, wP, wW, angle;
+	var style, wP, wW;
 	var d = new Date();
-	
 
-		
 	myFunction ();
 
 	function myFunction() {
 		wW = document.documentElement.clientWidth;
 		wP = document.getElementById('wrap').clientWidth;
 		
-		document.getElementById('sole').style = "top:" + (wP/2+35) + "px";
+		document.getElementById('sole').style = "top:" + (wP/2+35) + "px; left:" + (wP/2+5) + "px";
 		document.getElementById('result').style = "height:" + wP + "px";
 
 		var today = Date.parse(d); //милисескунды указанной даты
@@ -65,6 +60,7 @@
 		var year2000 = Date.parse(new Date(2000, 0, 01, 12, 0, 0, 0))/1000/60/60/24; //колечество дней 2000 года
 		//количество дней до осеннего равноденствия с 2000 года
 		var autumnEquinox = year2000 + 78.814 + 92.7388133 + 93.65911892 + 365.24236 * (yearDay - 2000);
+		console.log(new Date(autumnEquinox*24*60*60*1000));
 		var toEquinox = todayDay - autumnEquinox;
 		var corDay = (toEquinox)*360/365.24236;
 		w = wW/2 + (wP/3.3) * Math.cos(corDay * Math.PI / 180);
@@ -73,20 +69,7 @@
 		var Earth = "<img id=\'earth\' src=\'img/Earth.png\' style=" + style + " >";
 		document.getElementById('demo').innerHTML = Earth;
 
-		
-		console.log(toEquinox);
-		if (toEquinox < 89.86079102) {
-			document.getElementById('day1').innerHTML = "зимнего солнцестояния";
-			var decDay = 89.86079102 - toEquinox;
-			var intDay = Math.floor(decDay);
-			var Hour =  (decDay - intDay)*24;
-			var intHour = Math.floor(Hour);
-			var Minutes = (Hour - intHour)*60;
-			var intMinutes = Math.floor(Minutes)
-
-			document.getElementById('sumday1').innerHTML = intDay + "дней " + intHour + "ч. " + intMinutes + "мин.";
-
-		} 
+		//сколько осталось до дней равноденствия и солнцестояния
 
 		// разметка месяцев 
 
@@ -95,58 +78,131 @@
 			var canvas = document.getElementById('graph');
    			var ctx = canvas.getContext('2d');
 
-		   	ctx.beginPath();
+		ctx.beginPath();
+			for ( let i=0; i<12; i++) {
+				var year01 = Date.parse(new Date(yearDay, i, 1, 0, 0, 0, 0))/1000/60/60/24;
+				
+				var cor01 = (year01 - autumnEquinox)*360/365.24236;
+				w01 = wP/2 + wP/3 * Math.cos(cor01 * Math.PI / 180);
+				h01 = wP/2 - wP/3 * Math.sin(cor01 * Math.PI / 180);
 
-		for (i=0; i<12; i++) {
-			var year01 = Date.parse(new Date(yearDay, i, 1, 0, 0, 0, 0))/1000/60/60/24;
-			
-			var cor01 = (year01 - autumnEquinox)*360/365.24236;
-			w01 = wP/2 + wP/3 * Math.cos(cor01 * Math.PI / 180);
-			h01 = wP/2 - wP/3 * Math.sin(cor01 * Math.PI / 180);
+				w02 = wP/2 + wP/2.6 * Math.cos(cor01 * Math.PI / 180);
+				h02 = wP/2 - wP/2.6 * Math.sin(cor01 * Math.PI / 180);
 
-			w02 = wP/2 + wP/2.6 * Math.cos(cor01 * Math.PI / 180);
-			h02 = wP/2 - wP/2.6 * Math.sin(cor01 * Math.PI / 180);
-		
-
-
-			
-			ctx.moveTo(w01, h01);
-			ctx.lineTo(w02, h02);
-			ctx.strokeStyle = '#ccc'; 
-			ctx.lineWidth = 1; 
-		}	
+				ctx.moveTo(w01, h01);
+				ctx.lineTo(w02, h02);
+				ctx.strokeStyle = '#ccc'; 
+				ctx.lineWidth = 1; 
+			}	
 		ctx.stroke();
 
 		ctx.beginPath();
-		var x = 0;
-		for (g=0; g < 4; g++) {
-			if (g==0) {
-				x = 0;
-			} else if (g==1){ 
-				x -= 92.7388133;
-			} else if (g==2){ 
-				x -= 93.65911892;
-			} else if (g==3){ 
-				x -= 89.86079102;
+		
+			var x = 0, dE = "";
+			
+			localStorage.setItem('myStorage', JSON.stringify([]));
+			var arrey = JSON.parse(localStorage.getItem('myStorage'));
+
+
+			for (let i=0; i < 4; i++) {
+				if (i==0) {
+					x = 0; 
+					dE = " зимнего солнцестояния ";
+				} else if (i==1){ 
+					x -= 89.86079102;
+					dE = " осеннего равноденствия ";
+				} else if (i==2){ 
+					x -= 93.65911892;
+					dE = " летнего солнцестояния ";
+				} else if (i==3){ 
+					x -= 92.7388133;
+					dE = " весеннего равноденствия ";
+				}
+				
+				var dayEquinox = year2000 + 78.814 + 92.7388133 + 93.65911892 + 89.86079102 + x + 365.24236 * (yearDay  - 2000);
+				console.log(new Date(dayEquinox*24*60*60*1000));
+				console.log(new Date(todayDay*24*60*60*1000));		
+				var firework = "";
+
+					if (Math.floor(dayEquinox - todayDay) > 0) {
+						var decDay = dayEquinox - todayDay;
+						var E = ""
+					} else if (Math.floor(dayEquinox - todayDay) < 0) {
+						var decDay = dayEquinox + 365.24236 - todayDay;
+						var E = ""
+					} else {
+						var decDay = dayEquinox - todayDay;
+						switch (i) {
+							case 0:
+							var E = "зимнего солнцестояния";
+							break;
+							case 1:
+							var E = "осеннего равноденствия";
+							break;
+							case 2:
+							var E = "летнего солнцестояния";
+							break;
+							case 3:
+							var E = "весеннего равноденствия";
+							break; 
+							default:
+							var E = "";
+						}
+						
+					}
+						xxx = {dE, decDay, E}
+						arrey.push(xxx);
+					
+						localStorage.setItem('myStorage', JSON.stringify(arrey));
+						
+				var corEq = (89.86079102 + x)*360/365.24236;
+				wEq1 = wP/2 + wP/3.8 * Math.cos(corEq * Math.PI / 180);
+				hEq1 = wP/2 - wP/3.8 * Math.sin(corEq * Math.PI / 180);
+
+				wEq2 = wP/2 + wP/3 * Math.cos(corEq * Math.PI / 180);
+				hEq2 = wP/2 - wP/3 * Math.sin(corEq * Math.PI / 180);
+
+				ctx.moveTo(wEq1, hEq1);
+				ctx.lineTo(wEq2, hEq2);
+				ctx.strokeStyle = 'red'; 
+				ctx.lineWidth = 1; 
 			}
-			var corEq = (0 + x)*360/365.24236;
-			wEq1 = wP/2 + wP/3.8 * Math.cos(corEq * Math.PI / 180);
-			hEq1 = wP/2 - wP/3.8 * Math.sin(corEq * Math.PI / 180);
+		ctx.stroke();
 
-			wEq2 = wP/2 + wP/3 * Math.cos(corEq * Math.PI / 180);
-			hEq2 = wP/2 - wP/3 * Math.sin(corEq * Math.PI / 180);
+			arrey.sort(function(a, b) {
+    					return parseFloat(a.decDay) - parseFloat(b.decDay);
+						});
+					
+		fLen = arrey.length;
+		text = "<ul>"
+		for (let i = 0; i < fLen; i++) {
+			console.log(arrey[i].dE);
 
-			ctx.moveTo(wEq1, hEq1);
-			ctx.lineTo(wEq2, hEq2);
-			ctx.strokeStyle = 'red'; 
-			ctx.lineWidth = 1; 
+					var intDay = Math.floor(arrey[i].decDay);
+					var Hour =  (arrey[i].decDay - intDay)*24;
+					var intHour = Math.floor(Hour);
+					var Minutes = (Hour - intHour)*60;
+					var intMinutes = Math.floor(Minutes)
+			if (arrey[i].E != "") {
+				text += "<li><br> Сегодня день <span style=\'font-weight:bold;color:red\'>" + arrey[i].E + ". </span>Момент " + arrey[i].E + " произойдет в  <span style=\'font-weight:bold\'>"  + intHour + "час. " + intMinutes + "мин. </span><br></li>";
+			} else {
+				text += "<li><br> До следующего дня <span style=\'font-weight:bold\'>" + 
+				arrey[i].dE + "</span> осталось <span style=\'font-weight:bold\'>" + 
+				intDay + "дней " + intHour + "час. " + intMinutes + "мин. " + "</span><br></li>";
+			}
 
 		}
-		ctx.stroke();
+		text += "</ul>";
+		document.getElementById('textE').innerHTML = text;
+
+
 	}
 
 	function FunctionEnter() {
+		localStorage.clear();
 		d = document.getElementById('data').value
+		d = new Date(Date.parse(d)-3*60*60*1000);
+		
 		myFunction();
 	}
 

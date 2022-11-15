@@ -392,22 +392,14 @@ body {
     line-height: 1.2;
     font-weight: normal;
     color: black;
-    
     overflow: overlay;
-    
 }  
 
 .wrapper {
-    /* display: flex; */
     max-width: 800px;
-    /* height: 800px; */
     margin: 0 auto;
     background-color: #cedace;
     text-align: center;
-    
-    
-    
-    
 }
 
 label {
@@ -419,11 +411,9 @@ label {
     max-width: 400px;
     height: 40px;
     margin:0 auto;
-
 }
 
 #data {
-    /* width: 100%; */
     padding: 3px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -434,11 +424,7 @@ label {
     border: 1px solid #ccc;
     border-radius: 4px;
     color: #000;
-
-    background-color: #ececec; /* Зеленый */
-    /* border: none; */
-    /* color: white; */
-    /* padding: 15px 32px; */
+    background-color: #ececec;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -453,48 +439,37 @@ label {
     left:50%;
     top: 50%;
     transform: translate(-50%,-50%); 
-    
 }
 
 .sol img {
     width: 100%;
     height: 100%;
-    /* position: absolute; */
 }
 
 .result {
-    /* height: 800px; */
-    /* width: 800px; */
     background-image: url(../img/EarthsOrbit_en2.png);
     background-repeat: no-repeat;
-    /* padding: 10px; */
     background-position: top;
     background-size: 100%;
-    /* background-origin: content-box; */
     z-index: +2;
 }
 
 #earth {
     position: absolute;
-    
     width: 30px;
     height: 30px;
     transform: translate(-50%,-50%); 
-    
 }
 
 .said {
-    /* height: 300px; */
     width: 100%;
-    /* float: left; */
     text-align: left;
     top: 0;
+    padding: 10px;
 }
 
 #graph {
-    /* position: absolute; */
     z-index: +4;
-    
 }
 
 h1 {
@@ -505,4 +480,8 @@ h1 {
 
 p {
     text-indent: 25px;
+}
+
+ul { 
+    list-style: none; 
 }
