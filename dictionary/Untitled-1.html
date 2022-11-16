@@ -16,21 +16,39 @@
 
 <header>
   <div class="adde">
+    <nav class="middle__menu">
+		
+
+      <input id="menu-toggle" type="checkbox" />
+          <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+          </label>
+  
+      <ul class="middle__list">
+        <li class="middle__item">
+          <a href="#!" class="middle__link">Сортировка по времени добавления</a>
+        </li>
+        <li class="middle__item">
+          <a href="#!" class="middle__link">Сортировка по алфавиту</a>
+        </li>
+        <li class="middle__item">
+          <a href="#!" onclick="myfunctionRes()" class="middle__link">Удаление всего списка</a>
+        </li>												
+      </ul>
+  
+      
+    </nav>
+
     <div class="input">
       <input type="text" id="1" placeholder="select word" class="form-control">
     </div>
     
     
-    <div class="btn_mini">
-      
-      <button onclick="myfunction(this)" id="1" class="btn">Д</button>
-      <button onclick="myfunctionRes()" id="res" class="btn">О</button>
     
-    </div>   
     <div class="btn_one">
       
       <button onclick="myfunction(this)" id="1" class="btn">Добавить</button>
-      <button onclick="myfunctionRes()" id="res" class="btn">Очистить</button>
+      
     
     </div>      
     
@@ -46,7 +64,16 @@
             <ol id="list" class="liste"></ol>
             
           </div>
-      </div>          
+      </div>     
+      <div class="information">
+         <h1>
+          Список английских слов
+         </h1>
+         <p>
+          <br>В данный список вы можете добавлять выученные вами новые английские слова. <br>
+          <br>Чтобы посмотреть перевод слова, кликните по нему. <br>
+         </p>
+      </div>     
   </div>
 
 
@@ -62,12 +89,12 @@
 <script>
 
     
-  var arrey = JSON.parse(localStorage.getItem('myStorage'));
+  var arrey = JSON.parse(localStorage.getItem('Storage'));
   
     
   if (arrey == null) {
-    localStorage.setItem('myStorage', JSON.stringify([]));
-    var arrey = JSON.parse(localStorage.getItem('myStorage'));
+    localStorage.setItem('Storage', JSON.stringify([]));
+    var arrey = JSON.parse(localStorage.getItem('Storage'));
     
     
   } else {
@@ -81,49 +108,63 @@
     // text = "<ol>";
       text = "";
     for (i=0; i < fLen; i++) {
+      if (arrey[i].g==undefined) {""} else {
       var imegs = "<img id=" + i + " class=" + "imeges" + " src=" + "images/delete-icon.png" + " width=" + "20" + 
       " height="+ "20" + " alt=" + "Пример" + " onclick=" + "fuctionReloads(this)" + ">"
 
       text += "<li id=" + (i + 1) + " class=" + "li-item" +"><a class=" + "a_class" + " href=" + "https://translate.google.ru/?sl=en&tl=ru&text=" + 
-        arrey[i] + "%0A&op=translate" + " target=" + "_blank" + ">" + 
-        arrey[i] + "</a>" + imegs + " </li>";
+        arrey[i].x + "%0A&op=translate" + " target=" + "_blank" + ">" + 
+        arrey[i].x + "</a>" + imegs + " </li>";
+      }
     }
     // text += "</ol>";
     document.getElementById("list").innerHTML = text;
   }
-
+// удаление элементов
   function fuctionReloads(element) {
-    
     var rel = element.id;
     arrey.splice(rel,1);
-    localStorage.setItem('myStorage', JSON.stringify(arrey));
-    
-    
-    
+    localStorage.setItem('Storage', JSON.stringify(arrey));
     location.reload();
   }
 
+// добавление элементов  
+  var g = 0;
   function myfunction(element){
     
     var id, x, text; 
     id = element.id;
     x = document.getElementById(id).value;
-    arrey.push(x);
+    g += 1;
+    arrey.push({g, x});
                                               
         listen();
                                       
-    localStorage.setItem('myStorage', JSON.stringify(arrey));
+    localStorage.setItem('Storage', JSON.stringify(arrey));
         
     document.getElementById(id).value = "";
   }   
-        
+
+// удаление всего списка  
   function myfunctionRes(){
-    localStorage.clear()
+    localStorage.removeItem('Storage');
     location.reload();
   }
 
-var hP = (window.innerHeight -80) / window.devicePixelRatio;
-var wP = window.innerWidth / window.devicePixelRatio;
+FunctionSize();
+
+function FunctionSize() {
+
+var hP = (window.innerHeight -80);
+var wP = window.innerWidth;
+
+if (wP < 650 || window.devicePixelRatio>1) {
+  console.log(window.devicePixelRatio);
+// } else if (wP < 356) {
+//   document.getElementsByClassName('li-item')[0].style.width ="100%";
+  // [1].style.width ="100%";
+} else if (wP > 650 && window.devicePixelRatio == 1) {
+  console.log("1");
 
 var win = "height:" + (hP) + "px";
 
@@ -131,47 +172,56 @@ console.log(hP, win);
 document.getElementById('list').setAttribute("style", win);
 
 var heightcolumn = Math.floor(hP / 30);
-// console.log(heightcolumn);
+console.log(heightcolumn);
 var collistHeight = "grid-template-rows: repeat(" + heightcolumn + ", 1fr)";
-// document.getElementById('list').setAttribute("style", collistHeight);
+document.getElementById('list').setAttribute("style", collistHeight);
 
 
-document.getElementById('demo').innerHTML = hP + " " + window.devicePixelRatio;
+
 
 var colcol = Math.ceil(arrey.length / heightcolumn);
 
-if((wP/375)>colcol) {
+if((wP/355)>colcol) {
   
-  var colcol = Math.ceil(wP/375);
-  console.log(colcol + "-1");
-  var collistWidth = "grid-template-columns: repeat(" + colcol + ", 1fr); " + collistHeight;
-  document.getElementById('list').setAttribute("style", collistWidth);
-} else {
-  
-  var colcol = Math.ceil(arrey.length / heightcolumn);
-  console.log(colcol + "-2");
-  var collistWidth = "grid-template-columns: repeat(" + colcol + ", 1fr); " + collistHeight; 
-  document.getElementById('list').setAttribute("style", collistWidth);
+    var colcol = Math.ceil(wP/355);
+    console.log(colcol + "-1");
+    var collistWidth = "grid-template-columns: repeat(" + colcol + ", 1fr); " + collistHeight;
+    document.getElementById('list').setAttribute("style", collistWidth);
+  } else if((wP/355)<colcol){
+    
+    var colcol = Math.ceil(arrey.length / heightcolumn);
+    console.log(colcol + "-2");
+    var collistWidth = "grid-template-columns: repeat(" + colcol + ", 1fr); " + collistHeight; 
+    document.getElementById('list').setAttribute("style", collistWidth);
 
+  } 
+} 
+// else if (wP < 650 || window.devicePixelRatio>1){ return(FunctionSize()); }
+
+
+
+
+
+// for (i=0; i < fLen; i++) {
+//     if ((wP)<600) {
+//       var colWi = "width:" + Math.floor(wP) + "px;";
+//       document.getElementsByClassName('li-item')[i].style = colWi;
+//       console.log(colWi + "as");
+//     } else {
+//       var colWidth = Math.floor((wP) / colcol);
+
+//       colW = "width:" + colWidth + "px;"
+//       document.getElementsByClassName('li-item')[i].style = colW;
+//       console.log(colW + "sa");
+
+//     }
+
+// }
 }
 
-console.log(wP, hP);
-for (i=0; i < fLen; i++) {
-    if ((wP)<600) {
-      var colWi = "width:" + Math.floor(wP) + "px;";
-      document.getElementsByClassName('li-item')[i].style = colWi;
-      console.log(colWi + "as");
-    } else {
-      var colWidth = Math.floor((wP) / colcol);
-
-      colW = "width:" + colWidth + "px;"
-      document.getElementsByClassName('li-item')[i].style = colW;
-      console.log(colW + "sa");
-
-    }
-
-}
-
+window.addEventListener('resize', function (event) {
+  FunctionSize();
+	}, true);
 
 
 
