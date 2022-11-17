@@ -187,16 +187,14 @@ window.addEventListener("orientationchange", function() {
     FunctionSize();
 }, false);
 
-// сортировка списков
-
+// сортировка списка по алфавиту
 function SortAB() {
-  arrey.reverse(arrey.sort((a, b) => a.x.localeCompare(b.x)));
-  // arrey.reverse((a, b) => a.x.localeCompare(b.x))
-    console.log(arrey);
+    arrey.sort((a, b) => a.x.localeCompare(b.x));
     localStorage.setItem('Storage', JSON.stringify(arrey));
     location.reload();
 }
 
+// сортировка списка по времени добавления
 function Sort12() {
   arrey.sort((a, b) => a.g.localeCompare(b.g))
     console.log(arrey);
