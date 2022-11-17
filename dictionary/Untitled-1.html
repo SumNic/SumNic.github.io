@@ -17,8 +17,6 @@
 <header>
   <div class="adde">
     <nav class="middle__menu">
-		
-
       <input id="menu-toggle" type="checkbox" />
           <label class='menu-button-container' for="menu-toggle">
             <div class='menu-button'></div>
@@ -26,43 +24,33 @@
   
       <ul class="middle__list">
         <li class="middle__item">
-          <a href="#!" class="middle__link">Сортировка по времени добавления</a>
+          <a href="#!" onclick="Sort12()" class="middle__link">Сортировка по порядку</a>
         </li>
         <li class="middle__item">
-          <a href="#!" class="middle__link">Сортировка по алфавиту</a>
+          <a href="#!" onclick="SortAB()" class="middle__link">Сортировка по алфавиту</a>
         </li>
         <li class="middle__item">
           <a href="#!" onclick="myfunctionRes()" class="middle__link">Удаление всего списка</a>
         </li>												
       </ul>
-  
-      
     </nav>
 
     <div class="input">
       <input type="text" id="1" placeholder="select word" class="form-control">
     </div>
-    
-    
-    
-    <div class="btn_one">
-      
-      <button onclick="myfunction(this)" id="1" class="btn">Добавить</button>
-      
-    
-    </div>      
-    
-  </div>
 
+    <div class="btn_one">
+      <button onclick="myfunction(this)" id="1" class="btn">Добавить</button>
+    </div>      
+  </div>
 </header> 
 
 
-  <div class="container">
-      <div class="col">
+<div class="container">
+      <div class="col" id="col">
           
           <div class="listen">
             <ol id="list" class="liste"></ol>
-            
           </div>
            
           <div class="information">
@@ -72,38 +60,36 @@
             <p>
               <br>В данный список вы можете добавлять выученные вами новые английские слова. <br>
               <br>Чтобы посмотреть перевод слова, кликните по нему. <br>
+              <br>Введите ваше первое слово в поле "select word". <br>
             </p>
           </div> 
       </div>    
-  </div>
+</div>
 
 
 
 <footer>
   <div class="footer__2">
-    <p id="demo">
-
-    </p>
+    <p id="demo"></p>
   </div>
 </footer>
   			
 <script>
 
-    
   var arrey = JSON.parse(localStorage.getItem('Storage'));
   
-    
+// проверка, есть ли данные в local storage, если нет то создается 'Storage'
   if (arrey == null) {
     localStorage.setItem('Storage', JSON.stringify([]));
     var arrey = JSON.parse(localStorage.getItem('Storage'));
-    
-    
   } else {
     listen();
   }
-  listen();
 
-  function listen(){
+listen();
+
+// вывод списка из local storage
+function listen(){
         
     fLen = arrey.length;
     // text = "<ol>";
@@ -118,119 +104,107 @@
         arrey[i].x + "</a>" + imegs + " </li>";
       }
     }
-    // text += "</ol>";
     document.getElementById("list").innerHTML = text;
-  }
+}
+
 // удаление элементов
-  function fuctionReloads(element) {
+function fuctionReloads(element) {
     var rel = element.id;
     arrey.splice(rel,1);
     localStorage.setItem('Storage', JSON.stringify(arrey));
     location.reload();
-  }
+}
 
 // добавление элементов  
-  var g = 0;
-  function myfunction(element){
-    
+
+function myfunction(element){
+        var g = new Date();
+   
     var id, x, text; 
     id = element.id;
     x = document.getElementById(id).value;
-    g += 1;
+    
     arrey.push({g, x});
                                               
         listen();
+        FunctionSize();
                                       
     localStorage.setItem('Storage', JSON.stringify(arrey));
-        
     document.getElementById(id).value = "";
-  }   
+    
+}   
 
 // удаление всего списка  
-  function myfunctionRes(){
-    localStorage.removeItem('Storage');
-    location.reload();
-  }
+function myfunctionRes(){
+  localStorage.removeItem('Storage');
+  location.reload();
+}
 
 FunctionSize();
 
+// изменение размеров элементов
 function FunctionSize() {
+  var hP = (window.innerHeight -80);
+  var wP = window.innerWidth;
+  var win = "height:" + (hP) + "px";
 
-var hP = (window.innerHeight -80);
-var wP = window.innerWidth;
+  console.log(hP, win);
+  document.getElementById('list').setAttribute("style", win);
 
-// if (wP < 650) {
-//   //  || window.devicePixelRatio>1
-//   console.log(window.devicePixelRatio);
-// // } else if (wP < 356) {
-// //   document.getElementsByClassName('li-item')[0].style.width ="100%";
-//   // [1].style.width ="100%";
-// } else if (wP > 650) {
-  //  && window.devicePixelRatio == 1
-  console.log("1");
+  var heightcolumn = Math.floor(hP / 30);
+  console.log(heightcolumn);
+  var collistHeight = "grid-template-rows: repeat(" + heightcolumn + ", 1fr)";
+  document.getElementById('list').setAttribute("style", collistHeight);
 
-var win = "height:" + (hP) + "px";
-
-console.log(hP, win);
-document.getElementById('list').setAttribute("style", win);
-
-var heightcolumn = Math.floor(hP / 30);
-console.log(heightcolumn);
-var collistHeight = "grid-template-rows: repeat(" + heightcolumn + ", 1fr)";
-document.getElementById('list').setAttribute("style", collistHeight);
+  var colcol = Math.ceil(arrey.length / heightcolumn);
+  console.log('arrey.length', arrey.length);
+    if (arrey.length==0){
+        document.getElementsByClassName('information')[0].style.display = "block";
+      } else if (arrey.length>0){document.getElementsByClassName('information')[0].style.display = "none";
 
 
-
-
-var colcol = Math.ceil(arrey.length / heightcolumn);
-
-if((wP/355)>colcol) {
-  
-    var colcol = Math.ceil(wP/355);
-    console.log(colcol + "-1");
-    var collistWidth = "grid-template-columns: repeat(" + colcol + ", 1fr); " + collistHeight;
-    document.getElementById('list').setAttribute("style", collistWidth);
-  } else if((wP/355)<colcol){
-    
-    var colcol = Math.ceil(arrey.length / heightcolumn);
-    console.log(colcol + "-2");
-    var collistWidth = "grid-template-columns: repeat(" + colcol + ", 1fr); " + collistHeight; 
-    document.getElementById('list').setAttribute("style", collistWidth);
-
-  } 
-// } 
-// else if (wP < 650 || window.devicePixelRatio>1){ return(FunctionSize()); }
-
-
-
-
-
-// for (i=0; i < fLen; i++) {
-//     if ((wP)<600) {
-//       var colWi = "width:" + Math.floor(wP) + "px;";
-//       document.getElementsByClassName('li-item')[i].style = colWi;
-//       console.log(colWi + "as");
-//     } else {
-//       var colWidth = Math.floor((wP) / colcol);
-
-//       colW = "width:" + colWidth + "px;"
-//       document.getElementsByClassName('li-item')[i].style = colW;
-//       console.log(colW + "sa");
-
-//     }
-
-// }
+      if((wP/355)>colcol) {
+          var colcol = Math.ceil(wP/355);
+          console.log('colcol', colcol);
+          var collistWidth = "grid-template-columns: repeat(" + colcol + ", 1fr); " + collistHeight;
+          document.getElementById('list').setAttribute("style", collistWidth);
+        } else if((wP/355)<colcol){
+          var colcol = Math.ceil(arrey.length / heightcolumn);
+          console.log(colcol + "-2");
+          var collistWidth = "grid-template-columns: repeat(" + colcol + ", 1fr); " + collistHeight; 
+          document.getElementById('list').setAttribute("style", collistWidth);
+        } 
+    }
 }
 
+// при изменении размеров окна браузера
 window.addEventListener('resize', function (event) {
   FunctionSize();
-	}, true);
+}, true);
 
-  window.addEventListener("orientationchange", function() {
-    // Выводим числовое значение ориентации
-    console.log(window.orientation);
+// при поворте смартфона
+window.addEventListener("orientationchange", function() {
     FunctionSize();
 }, false);
+
+// сортировка списков
+
+function SortAB() {
+  arrey.reverse(arrey.sort((a, b) => a.x.localeCompare(b.x)));
+  // arrey.reverse((a, b) => a.x.localeCompare(b.x))
+    console.log(arrey);
+    localStorage.setItem('Storage', JSON.stringify(arrey));
+    location.reload();
+}
+
+function Sort12() {
+  arrey.sort((a, b) => a.g.localeCompare(b.g))
+    console.log(arrey);
+    localStorage.setItem('Storage', JSON.stringify(arrey));
+    location.reload();
+}
+
+
 
 
 
