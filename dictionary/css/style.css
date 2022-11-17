@@ -474,7 +474,7 @@ footer {
 
 } 
 
-@media  screen and (max-width: 370px) { 
+/* @media  screen and (max-width: 370px) { 
     body {
         overflow: auto;
     }
@@ -498,19 +498,19 @@ footer {
     }  
 }
 
-@media  screen and (min-width: 370px) { 
-    body {
+@media  screen and (min-width: 370px) {  */
+    /* body {
         overflow: auto;
     }
     .information {
-        width: calc(100% - 355px);
+        width: calc(100% - 360px);
     float: right;
     }
 
     .col {
         box-sizing: border-box;
         border: 1px solid black;
-        /* width: 355px; */
+        
         float: left;
     }
 
@@ -521,9 +521,11 @@ footer {
     }  
 }
 
-@media  screen and (min-width: 650px) { 
+@media  screen and (min-width: 650px) {  */
     .information {
-        display: none;
+        /* display: none; */
+        width: 350px;
+        float:left;
     }
 
     .col {
@@ -540,7 +542,7 @@ footer {
     }  
 
     
-}
+/* } */
 
 
 

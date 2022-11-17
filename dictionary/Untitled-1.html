@@ -64,16 +64,17 @@
             <ol id="list" class="liste"></ol>
             
           </div>
-      </div>     
-      <div class="information">
-         <h1>
-          Список английских слов
-         </h1>
-         <p>
-          <br>В данный список вы можете добавлять выученные вами новые английские слова. <br>
-          <br>Чтобы посмотреть перевод слова, кликните по нему. <br>
-         </p>
-      </div>     
+           
+          <div class="information">
+            <h1>
+              Список английских слов
+            </h1>
+            <p>
+              <br>В данный список вы можете добавлять выученные вами новые английские слова. <br>
+              <br>Чтобы посмотреть перевод слова, кликните по нему. <br>
+            </p>
+          </div> 
+      </div>    
   </div>
 
 
@@ -158,13 +159,13 @@ function FunctionSize() {
 var hP = (window.innerHeight -80);
 var wP = window.innerWidth;
 
-if (wP < 650) {
-  //  || window.devicePixelRatio>1
-  console.log(window.devicePixelRatio);
-// } else if (wP < 356) {
-//   document.getElementsByClassName('li-item')[0].style.width ="100%";
-  // [1].style.width ="100%";
-} else if (wP > 650) {
+// if (wP < 650) {
+//   //  || window.devicePixelRatio>1
+//   console.log(window.devicePixelRatio);
+// // } else if (wP < 356) {
+// //   document.getElementsByClassName('li-item')[0].style.width ="100%";
+//   // [1].style.width ="100%";
+// } else if (wP > 650) {
   //  && window.devicePixelRatio == 1
   console.log("1");
 
@@ -197,7 +198,7 @@ if((wP/355)>colcol) {
     document.getElementById('list').setAttribute("style", collistWidth);
 
   } 
-} 
+// } 
 // else if (wP < 650 || window.devicePixelRatio>1){ return(FunctionSize()); }
 
 
@@ -224,6 +225,12 @@ if((wP/355)>colcol) {
 window.addEventListener('resize', function (event) {
   FunctionSize();
 	}, true);
+
+  window.addEventListener("orientationchange", function() {
+    // Выводим числовое значение ориентации
+    console.log(window.orientation);
+    FunctionSize();
+}, false);
 
 
 
