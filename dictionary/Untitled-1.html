@@ -116,7 +116,6 @@ function fuctionReloads(element) {
 }
 
 // добавление элементов  
-
 function myfunction(element){
         var g = new Date();
    
@@ -131,7 +130,6 @@ function myfunction(element){
                                       
     localStorage.setItem('Storage', JSON.stringify(arrey));
     document.getElementById(id).value = "";
-    
 }   
 
 // удаление всего списка  
@@ -156,8 +154,7 @@ function FunctionSize() {
   var collistHeight = "grid-template-rows: repeat(" + heightcolumn + ", 1fr)";
   document.getElementById('list').setAttribute("style", collistHeight);
 
-  var colcol = Math.ceil(arrey.length / heightcolumn);
-  console.log('arrey.length', arrey.length);
+    var colcol = Math.ceil(arrey.length / heightcolumn);
     if (arrey.length==0){
         document.getElementsByClassName('information')[0].style.display = "block";
       } else if (arrey.length>0){document.getElementsByClassName('information')[0].style.display = "none";
@@ -165,12 +162,10 @@ function FunctionSize() {
 
       if((wP/355)>colcol) {
           var colcol = Math.ceil(wP/355);
-          console.log('colcol', colcol);
           var collistWidth = "grid-template-columns: repeat(" + colcol + ", 1fr); " + collistHeight;
           document.getElementById('list').setAttribute("style", collistWidth);
         } else if((wP/355)<colcol){
           var colcol = Math.ceil(arrey.length / heightcolumn);
-          console.log(colcol + "-2");
           var collistWidth = "grid-template-columns: repeat(" + colcol + ", 1fr); " + collistHeight; 
           document.getElementById('list').setAttribute("style", collistWidth);
         } 
@@ -197,7 +192,6 @@ function SortAB() {
 // сортировка списка по времени добавления
 function Sort12() {
   arrey.sort((a, b) => a.g.localeCompare(b.g))
-    console.log(arrey);
     localStorage.setItem('Storage', JSON.stringify(arrey));
     location.reload();
 }
