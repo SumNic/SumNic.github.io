@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Englich</title>
+    <link rel="shortcut icon" href="images/icon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header__wrapper">
+    <div class="btn_one">
+        <a href="index.html" class="btn__header"><img src="images/left-arrow.png" alt="Назад" class="logo__pic"></a>
+    </div> 
+    <div class="logotip">
+        <a href="index.html" class="centr__logo"><img src="images/icon.png" alt="Логотип" class="logo__pic"></a>
+    </div>
+    <div class="btn_one">
+        <a href="auth.html" class="btn__header"><img src="images/right-arrow.png" alt="Вперед" class="logo__pic"></a>
+      </div>
+  </div>
+</header> 
+
+<div class="container">
+        <div class="information">
+          <div class="action">
+            <form id="myform" action="php/action_page.php" method="post">
+                  <label for="status">Статус:</label>
+                  <select id="status" name="status" required>
+                    <option value="none">--выбери значение--</option>
+                    <option value="father">Папа </option>
+                    <option value="mother">Мама</option>
+                    <option value="daughter">Дочь</option>
+                    <option value="son">Сын</option>
+                  </select><br>
+                  <label for="fname">Имя:</label>
+                  <input type="text" id="fname" name="fname" placeholder="Введите имя" required><br>
+                  <label for="password">Пароль:</label>
+                  <input type="password" maxlength="4" id="password" name="password" placeholder="Придумай пароль" required><br>
+             </form>
+          </div>
+        </div> 
+</div>
+
+<footer>
+  <div class="footer__over">
+    <div class="btn_registration__footer">
+      <input type="submit" form="myform" class="submit__footer" value="Зарегистрироваться"/>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
