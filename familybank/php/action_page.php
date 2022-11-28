@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 $status = filter_var(trim($_POST['status']), FILTER_SANITIZE_STRING); // Удаляет все лишнее и записываем значение в переменную //$login
 $fname = filter_var(trim($_POST['fname']), FILTER_SANITIZE_STRING);
 $password = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
@@ -88,8 +88,8 @@ if($mysql->query($sql)){
 $result2 = $mysql->query("SELECT * FROM `table_reg` WHERE `fname` = '$fname'");
 
 $user2 = $result2->fetch_assoc(); // Конвертируем в массив
-setcookie('user', $user2['fname'], time() + 3600, "/");
-
+// setcookie('user', $user2['fname'], time() + 3600, "/");
+$_SESSION['user']=$user2['fname'];	 
 $mysql->close();
 header('Location: /balance.php');
 

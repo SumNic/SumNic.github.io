@@ -1,11 +1,11 @@
 
 <?php
-
+session_start();
 $date = filter_var(trim($_POST['date']), FILTER_SANITIZE_STRING);
 
-$fname = $_COOKIE['user'];
+$fname = $_SESSION['user'];
 
-if(!isset($_COOKIE['user'])) {
+if(!isset($_SESSION['user'])) {
       echo "<br><br><p>Вы не вошли в систему. <a href='/auth.html'>Войти в систему?</a></p>";
     exit();
       } 

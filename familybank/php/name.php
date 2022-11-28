@@ -1,9 +1,9 @@
-
 <?php
+session_start();
     $mysql = new mysqli('dictionary', 'root', '', 'registr');
     $result = $mysql->query("SELECT `fname`,`sum` FROM `table_reg`");
     
-    if(!isset($_COOKIE['user'])) {
+    if(!isset($_SESSION['user'])) {
       echo "<br><br><p>Вы не вошли в систему. <a href='/auth.html'>Войти в систему?</a></p>";
     exit();
       } 
@@ -13,7 +13,7 @@
     //   }
     echo "<div class='salute'>
             <h2>Привет, <span>";
-            echo $_COOKIE['user'];
+            echo $_SESSION['user'];
             echo "!</span></h2>
         </div>";
     echo "
@@ -36,7 +36,7 @@
         </div>
         <div class='balance'>
             Твой баланс: <span>";
-            $fname = $_COOKIE['user'];
+            $fname = $_SESSION['user'];
             $result2 = $mysql->query("SELECT `sum` FROM `table_reg`WHERE `fname` = '$fname'");
                 
             $sum = $result2->fetch_array(MYSQLI_NUM);

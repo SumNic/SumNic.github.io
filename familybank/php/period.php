@@ -1,8 +1,9 @@
-
 <?php
-    $fname = $_COOKIE['user'];
-    
-    if(!isset($_COOKIE['user'])) {
+session_start();
+    // $fname = $_COOKIE['user'];
+    $fname = $_SESSION['user'];
+    // if(!isset($_COOKIE['user'])) {
+    if(!isset($_SESSION['user'])) {
       echo "<br><br><p>Вы не вошли в систему. <a href='/auth.html'>Войти в систему?</a></p>";
     exit();
       } 
@@ -28,7 +29,8 @@
     
     echo "<div class='salute'>
             <h2><span>";
-            echo $_COOKIE['user'];
+            echo $_SESSION['user'];
+            // echo $_COOKIE['user'];
             if ($pr !="д"){
             echo ", это твои доходы за </span><span>";
             echo $pr;
@@ -52,7 +54,7 @@
         if (empty($user2)) {
             goto foo;
             
-        } 
+        } else {
 
         echo"<div class='inc'>
         <div class='date'>
@@ -68,7 +70,7 @@
             Сообщение
         </div>
     </div>";
-        
+        }   
 
 
         $mysql = new mysqli('dictionary', 'root', '', 'registr');

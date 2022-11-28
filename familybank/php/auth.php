@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 $fname = filter_var(trim($_POST['fname']), FILTER_SANITIZE_STRING);
 $password = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
 
@@ -43,8 +43,8 @@ else if(!empty($user) and empty($user1)){
 	</script>';
 	exit();
 }
-
-setcookie('user', $user['fname'], time() + 3600, "/");
+$_SESSION['user']=$user['fname'];	 
+// setcookie('user', $user['fname'], time() + 3600, "/");
 
 $mysql->close();
 

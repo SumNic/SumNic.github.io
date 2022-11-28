@@ -1,10 +1,10 @@
 <?php 
-
+session_start();
 $fname = filter_var(trim($_POST['fname']), FILTER_SANITIZE_STRING);
 $sum = filter_var(trim($_POST['sum']), FILTER_SANITIZE_STRING); // Удаляет все лишнее и записываем значение в переменную //$login
 
     
-$fname2 = $_COOKIE['user'];
+$fname2 = $_SESSION['user'];
 $mysql = new mysqli('dictionary', 'root', '', 'registr');
 $result2 = $mysql->query("SELECT `fname`, `sum` FROM `table_reg` WHERE `fname` = '$fname2'");
 

@@ -541,7 +541,9 @@ header{
     
 }
 
-
+/* select[type=option]{
+    height: 100px;
+} */
 
 option:first-child{
     display:none;
