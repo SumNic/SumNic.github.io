@@ -414,13 +414,19 @@ body {
 
     color: #56593D;
     
-} 
+}
 
-.wrapper{
+header{
     width: 1440px;
-    height: 142px;
     margin: 0 auto;
     background-color: #ccc;
+}
+
+.wrapper72{
+    width: 1296px;
+    height: 142px;
+    
+    
 }
 
 .wrapper__list{
@@ -459,12 +465,6 @@ select {
     /* position: absolute; */
 }
 
-select:after{
-    border: none;
-    content: "";
-    
-}
-
 option:first-child{
     display:none;
     
@@ -485,10 +485,17 @@ option:first-child{
     color: #56593D;
 }
 
+.middle{
+    
+}
+
 .rect {
     /* position: absolute; */
+    margin: 0 auto;
     width: 1328px;
-    height: auto;
-    background: url(../img/Rectangle.png);
+    height: 700px;
+    background-image: url(../img/Rectangle.png);
+    background-size: 100%;
+    background-position: center;
     
 }
