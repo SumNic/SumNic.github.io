@@ -5,14 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Json</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     
+<header>
+	<div class="wrapper">
+<nav class="wrapper__menu">
+		<ul class="wrapper__list">
+			<li class="wrapper__item">
+				<select name="Shop" id="" onchange="location = this.value;">
+					<option value="">Shop</option>
+					<option value="#1">Shop1</option>
+					<option value="#2">Shop2</option>
+					<option value="#3">Shop3</option>
+				</select>
+				<!-- <a href="#!" class="middle__link">Shop</a> -->
+			</li>
+			<li class="wrapper__item">
+				<a href="#!" class="wrapper__link">Style Quiz</a>
+			</li>
+			<li class="wrapper__item">
+				<a href="#!" class="wrapper__link">About Us</a>
+			</li>	
+			<li class="wrapper__item">
+				<select name="Shop" id="" onchange="location = this.value;">
+					<option value="">Stories</option>
+					<option value="#1">Stories1</option>
+					<option value="#2">Stories2</option>
+					<option value="#3">Stories3</option>
+				</select>
+				<!-- <a href="#!" class="middle__link">Stories</a> -->
+			</li>											
+		</ul>
+	</nav>
+	</div>
+</header>
 
+<section class="middle">
+	<div class="rect">
 
-  <section class="middle">
-	
+	</div>
 	<!-- <nav class="middle__menu">
 		<ul class="middle__list">
 			<li class="middle__item">
@@ -28,58 +61,6 @@
 	</nav> -->
 	
 	
-	<div class="main__screen">
-		<!-- <div id="nav-btn"></div> -->
-
-		<nav class="middle__menu">
-			<input id="menu-toggle" type="checkbox" />
-			<label class='menu-button-container' for="menu-toggle">
-				<div class='menu-button'></div>
-			</label>	
-			<ul class="middle__list">
-				<li class="middle__item">
-					<a href="#!" class="middle__link">Моя страница</a>
-				</li>
-				<li class="middle__item">
-					<a href="#!" class="middle__link">Новости</a>
-				</li>
-				<li class="middle__item">
-					<a href="#!" class="middle__link">Сообщения</a>
-				</li>												
-			</ul>
-		</nav>
-		
-		
-
-
-
-		<div class="middle__logo">
-			<!-- <img src="./images/Logotip-Rodnoj-parti-500x500.png" alt="Большой логотип" class="middle__logo-pic"> -->
-		</div>
-		
-		<div class="main__text">
-			
-			
-			
-			<h1>Привет, Вселенная!</h1>
-			<h2>Я создаю свой проект, который принесет мне очень много денег</h2>
-			<h2>Я уверен, что у меня всё получится и благодаря этому проекту я стану сказочно богат.</h2>
-			
-			<p id="mapholder">ффф</p>
-			
-			<script>
-			
-			function showPosition(position) {
-				var latlon = position.coords.latitude + "," + position.coords.longitude;
-			  
-				var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-				+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_KEY";
-			  
-				document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
-			  }
-			</script>
-		</div>
-	</div>
 	
 </section>
 
