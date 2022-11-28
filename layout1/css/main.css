@@ -413,18 +413,20 @@ body {
     text-align: center;
 
     color: #56593D;
+    background-color: #56593D;
     
 }
 
 header{
     width: 1440px;
     margin: 0 auto;
-    background-color: #ccc;
+    background-color: rgb(119, 175, 124);
 }
 
-.wrapper72{
-    width: 1296px;
-    height: 142px;
+.wrapper{
+    width: 1328px;
+    margin: 0 auto;
+    /* height: 142px; */
     
     
 }
@@ -432,6 +434,7 @@ header{
 .wrapper__list{
     display: flex;
     flex-wrap: wrap;
+    background-color: rgb(119, 154, 175);
 }
 
 .wrapper__item{
@@ -486,12 +489,14 @@ option:first-child{
 }
 
 .middle{
-    
+    width: 1440px;
+    margin: 0 auto;
+    background-color: rgb(175, 83, 83);
 }
 
 .rect {
     /* position: absolute; */
-    margin: 0 auto;
+    /* margin: 0 auto; */
     width: 1328px;
     height: 700px;
     background-image: url(../img/Rectangle.png);
