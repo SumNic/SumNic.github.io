@@ -435,6 +435,34 @@ header{
     flex-basis: 40%;
 }
 
+.heder__burger{
+    width: 40px;
+    height: 28px;
+    position: relative;
+}
+
+.burger__line{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+}
+
+.burger__line-first{
+    top: 0;
+}
+
+.burger__line-first{
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger__line-third{
+    bottom: 0;
+}
+
 .logo{
     justify-content: center;
     display: flex;
@@ -443,8 +471,11 @@ header{
 
 .topmenu{
     justify-content: right;
+    
     display: flex;
-    flex-basis: 40%;
+    flex-grow: 1;
+    /* align-content: flex-end; */
+    /* flex-basis: 40%; */
 }
 
 .cout{
@@ -474,11 +505,12 @@ header{
 
 .wrapper__list{
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .wrapper__item{
     margin-left: 38px;
+    /* min-width: 100px; */
 }
 
 select {
@@ -495,6 +527,15 @@ select {
     text-transform: uppercase;
     color: #56593D;
     border: none;
+    outline: 0px;
+
+    /* background: rgba(0, 0, 0, 0.3); */
+  /* color: #fff; */
+}
+
+select option{
+    border: 0;
+    background-color: none;
 }
 
 option:first-child{
@@ -558,8 +599,6 @@ h2 {
     text-align: right;
     color: #56593D;
     margin-top: 10px;
-
-    
 }
 
 .botton{
@@ -973,10 +1012,6 @@ footer{
     border: none;
 }
 
-option:first-child{
-    display:none;
-}
-
 .footer__link{
     text-decoration: none;
     font-family: 'Roboto';
@@ -1000,6 +1035,9 @@ option:first-child{
 
 
 @media screen and (min-width: 1440px ) {
+    .heder__burger{
+        display: none;
+    }
     h1{
         font-size: 57px;
         line-height: 81px;
@@ -1058,6 +1096,9 @@ option:first-child{
 }
 
 @media screen and (max-width: 1439px ) {
+    .heder__burger{
+        display: none;
+    }
     h1{
         font-size: calc( (100vw - 480px)/(1440 - 480) * (57 - 30) + 30px);
         line-height: calc( (100vw - 480px)/(1440 - 480) * (81 - 40) + 40px);
@@ -1114,6 +1155,79 @@ option:first-child{
 }
 
 @media screen and (max-width: 880px ) {
+    .heder__burger{
+        display: block;
+        z-index: 9;
+        
+    }
+    .wrapper__heder__burger{
+        flex-basis: 40%;
+        display: block;
+    }
+
+    /* .wrapper__menu{
+        display: none;
+    } */
+    
+    .wrapper__menu{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: #cfd3a9;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        transform: translateX(100%);
+        /* transition: 0.2s linear; */
+    }
+    .wrapper__menu-activ{
+        transform: translateX(0);
+    }
+    
+    .wrapper__list{
+        display: block;
+        padding: 40px 15px;
+        text-align: left;
+    }
+    .wrapper__item select, .wrapper__item a {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 70px;
+        color: #FFFFEF;
+    }
+    select {
+        appearance: menulist;
+        background: #cfd3a9;
+    }
+    .header__nav-close{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 11;
+    }
+    .header__nav-close-line{
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+    }
+    .header__nav-close-line:first-child{
+        -webkit-transform: translateY(-50%) rotate(45deg);
+            -ms-transform: translateY(-50%) rotate(45deg);
+                transform: translateY(-50%) rotate(45deg);
+    }
+    .header__nav-close-line:last-child{
+        -webkit-transform: translateY(-50%) rotate(-45deg);
+            -ms-transform: translateY(-50%) rotate(-45deg);
+                transform: translateY(-50%) rotate(-45deg);
+    }
     .design, .table{
         flex-wrap: wrap;
     }
@@ -1124,6 +1238,22 @@ option:first-child{
         min-width: 170px;
     }
     
+}
+
+@media screen and (max-width: 510px ) {
+    .logo{
+        justify-content: flex-end;
+        display: flex;
+        flex-basis: 60%;
+    }
+    .topmenu{
+        flex-basis: 100%;
+        justify-content: flex-end;
+        padding-top: 20px;
+    }
+    .wrapper__block{
+        padding: 20px;
+    }
 }
 
 @media screen and (max-width: 480px ) {
