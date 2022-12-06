@@ -13,7 +13,7 @@
 <header class="header">
 	<div class="header__wrapper">
         <div class="logo">
-            <a href="#!" class=""><img src="img/svg/logo.svg" alt="logo"></a>
+            <a href="#!" class="logo__logo"><img src="img/svg/logo.svg" alt="logo"></a>
         </div>
 		<div class="header__menu">
 			<nav class="header__menu_nav">
@@ -24,6 +24,9 @@
 					<li class="header__menu__item">
 						<a href="#!" class="header__menu__link">Templates</a>
 					</li>
+					<div class="header__menu__item__new">
+						<a href="#!" class="header__menu__link__new">new</a>
+					</div>
 					<li class="header__menu__item">
 						<a href="#!" class="header__menu__link">Pricing</a>
 					</li>	
@@ -36,211 +39,128 @@
 				</ul>
 			</nav>
 		</div>
-        <div class="Log_in">
-            <a href="#!" class="Log_in__link">Log in</a>
-        </div>
-        <div class="Start_free">
-            <a href="#!" class="Start_free__link">Start free trial</a>
-        </div>
+		<div class="right__button">
+			<div class="log_in">
+				<a href="#!" class="log_in__link">Log in</a>
+			</div>
+			<div class="start_free">
+				<a href="#!" class="start_free__link">Start free trial</a>
+			</div>
+		</div>
 	</div>
 </header>
 
-<section class="middle">
-	<div class="wrapper">
-		<div class="wrapper__block2">
-			<div class="rect">
-				<div class="collection">
-					<p class="all">all collections</p>
-					<h2>Elevate Your Everyday</h2>
-					<div class="botton">
-						<a href="#" class="shop__all">shop now</a>
+<main class="main">
+	<article class="main__article">
+		<div class="main__name">
+			<h1 class="main__h1">Where hiring comes together.</h1>
+		</div>
+		<div class="main__text">
+			<p class="main__p1">Everything you need to organise your hiring and make a great impression.</p>
+		</div>
+		<div class="form">
+			<form id="form__form" action="/action_page.php">
+				<input type="email" id="email" name="email" placeholder="Work email">
+				<input type="submit" id="submit" value="Start free trial">
+				
+			</form>
+		</div>
+		<section class="section">
+			<h3 class="section__h3">Join thousands of teams hiring with Homerun</h3>
+			<div class="hiring">
+				<img src="img/tbwa.png" alt="tbwa" class="hiring__img">
+				<img src="img/tonys.png" alt="tony's" class="hiring__img">
+				<img src="img/buffer.png" alt="buffer" class="hiring__img">
+				<img src="img/volks.png" alt="volks" class="hiring__img">
+				<img src="img/geckoboard.png" alt="geckoboard" class="hiring__img">
+				<img src="img/public.png" alt="public" class="hiring__img">
+				<img src="img/tnwq.png" alt="tnw" class="hiring__img">
+			</div>	
+		</section>
+		<section class="section">
+			<h2 class="section__h2">How Homerun works</h2>
+			<div class="section_video">
+				<a href="#!" class="section_video__link"><img src="img/join.png" alt="Come join" class="section_video__img"></a>
+			</div>
+			<div class="watch">
+				<a href="#!" class="section_video__play"><img src="img/play.png" alt="Video play" class="section_video__play__img"></a>
+				<p class="video__play__p2">Watch: Homerun in 90 seconds</p> 
+			</div>
+			<div class="space"></div>
+
+		</section>
+		<section class="section">
+			<div class="section__block">
+				<div class="section__block__content">
+					<p class="section__block__title">Hire</p>
+					<h2 class="section__block__h2">An all-in-one tool for your entire team.</h2>
+					<p class="section__block__text">No more ping-ponging between emails, 
+						spreadsheets, and other apps. Bring everything together in one place.</p>
+					<div class="section__block__butoon">
+						<a href="#!" class="section__block__butoon-text">Learn more</a>
 					</div>
 				</div>
-			</div>
-		</div>
-		<h1>If your happy place is at the dinner table, 
-			we totally get that. That’s why we created products 
-			to help you find slow moments in a fast world.</h1>
-		<div class="referens">
-			<div class="referens__all">
-				<p class="referens__text">
-					Shop All
-				</p>
-				<img src="img/referens_pic.png" alt="arrow" class="referens__pic">
-			</div>
-			<div class="referens__stories">
-				<p class="referens__text">
-					Read Stories
-				</p>
-				<img src="img/referens_pic.png" alt="arrow" class="referens__pic">
-			</div>
-		</div>
-		<div class="maple">
-			<h3>Maple Board Collection</h3>
-		</div>
-		<div class="maple__grid">
-			<div class="maple__grid-grid">
-				<div class="maple__grid-pic">
-					<img src="img/short.png" alt="Maple Board - Short">
-				</div>
-				<p class="maple__grid-title">Maple Board - Short</p>
-				<p class="maple__grid-title-2">$98.00</p>
-			</div>
-			<div class="maple__grid-grid">
-				<div class="maple__grid-pic">
-					<img src="img/long.png" alt="Maple Board - Long">
-				</div>
-				<p class="maple__grid-title">Maple Board - Long</p>
-				<p class="maple__grid-title-2">$125.00</p>
-			</div>
-			<div class="maple__grid-grid">
-				<div class="maple__grid-pic">
-					<img src="img/wide.png" alt="Maple Board - Wide">
-				</div>
-				<p class="maple__grid-title">Maple Board - Wide</p>
-				<p class="maple__grid-title-2">$158.00</p>
-			</div>
-		</div>
-		<div class="more">
-			<p class="more-text">THE ESSENTIALS</p>
-			<h4 class="more-title">We believe minimalism means more. More space, 
-				more time, more meaningful moments.</h4>
-		</div>
-	
-		<div class="design">
-			<div class="design-pic">
-				<img src="img/design.png" alt="Our Design Story">
-			</div>
-			<div class="design-comment">
-				<p class="design-text">Our Design Story</p>
-				<div class="design-dash">
-				</div>
-				<div class="design-jost">
-					<p class="design-text-jost">We believe in thoughtful, intentional living. 
-						So we promise not to clutter your cabinets with one-off pieces you’ll rarely use. 
-						Our collection only includes items you’ll reach for every day. 
-						Because mindful living should be simple, not stressful.</p>
+				<div class="section__block__dashboard">
+					<img src="img/dashboard.png" alt="dashboard">
+					<p class="section__block__dashboard__p">All your jobs, candidates, messages and notes in one place.</p>
 				</div>
 			</div>
-		</div>
-		<div class="table">
-			<div class="table-pic">
-				<img src="img/table.png" alt="Your Table Your Time">
-			</div>
-			<div class="table-comment">
-				<p class="table-text">Your Table Your Time</p>
-				<div class="table-dash">
+			<div class="space" style="height: 198px;"></div>
+		</section>
+		<section class="section">
+			<div class="section__block section__block_revers">
+				<div class="section__block__content section__block__content_revers">
+					<p class="section__block__title section__block__title_revers">Create</p>
+					<h2 class="section__block__h2">An experience candidates simply love.</h2>
+					<p class="section__block__text">Treat candidates with a rich career site, 
+						beautiful job posts, tailored application forms and faster response 
+						times.</p>
+					<div class="section__block__butoon">
+						<a href="#!" class="section__block__butoon-text">Learn more</a>
+					</div>
 				</div>
-				<div class="table-jost">
-					<p class="table-text-jost">Our modern lives keep us in constant motion. 
-						But what keeps us moving isn’t always what moves us. 
-						Our time at the table is our pause button. Meals can become moments 
-						and moments can become memories. So grab a plate, pull up a seat, 
-						and stay a while</p>
-				</div>
-			</div>
-		</div>
-		<div class="subscribe">
-			<p class="subscribe-title">Sign up to our newsletter</p>
-			<p class="subscribe-text">Receive special offers and first look at new products.</p>
-			<div class="subscribe__field">
-				<div class="subscribe__field-dash"></div>
-				<div class="subscribe__field-button">
-					<a href="#" class="subscribe__field-text">Subscribe</a>
+				<div class="section__block__dashboard">
+					<img src="img/transfer.png" alt="transfer">
+					<p class="section__block__dashboard__p">Career page created with Homerun.</p>
 				</div>
 			</div>
-			<p class="moments-title">#KinnMoments</p>
-		</div>	
-		<div class="moment__slider">
-			<div class="moment__slider-image"><img src="img/image1.png" alt="image" class="image__slider"></div>
-			<div class="moment__slider-image"><img src="img/image2.png" alt="image" class="image__slider"></div>
-			<div class="moment__slider-image"><img src="img/image3.png" alt="image" class="image__slider"></div>
-			<div class="moment__slider-image"><img src="img/image4.png" alt="image" class="image__slider"></div>
-		</div>
-	</div>
-	
-</section>
+			<div class="space" style="height: 139px;"></div>
+		</section>
+		<section class="section">
+			<div class="club">
+				<div class="logo__club">
+					<a href="#" class="logo__club__link"><img src="img/logo_club.png" alt="The club" class="logo__club__img"></a>
+				</div>
+				<h2 class="logo__club__title">Join the club.</h2>
+				<p class="logo__club__text">Homerun customers share a passion for culture, design and innovation.</p>
+				<p class="logo__club__text">We all agree hiring can be more meaningful and personal.</p>
+				<div class="customers__button">
+					<div>
+						<a href="#!" class="customers__button-text">About our customers</a>
+					</div>
+				</div>
+				<div class="slider">
+					<div class="slider__foto">
+						<img src="img/foto.png" alt="foto" class="slider__foto__img">
+					</div>
+					<div class="slider__info"></div>
+				</div>
+			</div>
+			
+		</section>
+
+
+	</article>
+</main>
 
 <footer>
 	<div class="footer__block">
-		<div class="footer__block-table" style="width: 28%;">
-			<div class="footer__block-tit">
-				<p class="footer__block-title">© 2021 <span>Kinn Home</span></p>
-			</div>
-			
-			<div class="footer__block-dash">
-			</div>
-			<div class="footer__block-jost">
-				<p class="footer__block-text">Need to get in touch? Just email us at hello@kinnhome.co</p>
-			</div>
-		</div>
-		<div class="footer__block-table" style="width: 25%;">
-			<div class="footer__block-tit">
-				<p class="footer__block-title" style="text-transform: uppercase">Explore</p>
-			</div>
-			<div class="footer__block-dash">
-			</div>
-			<div class="footer__block-jost">
-				<ul class="footer__list">
-					<li class="footer__item">
-						<select name="Shop" id="footer__select1" onchange="location = this.value;">
-							<option value="">Shop</option>
-							<option value="#1">Shop1</option>
-							<option value="#2">Shop2</option>
-							<option value="#3">Shop3</option>
-						</select>
-					</li>
-					<li class="footer__item">
-						<a href="#!" class="footer__link">Style Quiz</a>
-					</li>
-					<li class="footer__item">
-						<a href="#!" class="footer__link">About Us</a>
-					</li>	
-					<li class="footer__item">
-						<select name="Shop" id="footer__select2" onchange="location = this.value;">
-							<option value="">Stories</option>
-							<option value="#1">Stories1</option>
-							<option value="#2">Stories2</option>
-							<option value="#3">Stories3</option>
-						</select>
-					</li>		
-				</ul>
-			</div>
-		</div>
-		<div class="footer__block-table" style="width: 25%;">
-			<div class="footer__block-tit">
-				<p class="footer__block-title" style="text-transform: uppercase">Help</p>
-			</div>
-			<div class="footer__block-dash">
-			</div>
-			<div class="footer__block-jost">
-				<ul class="footer__list">
-					<li class="footer__item">
-						<a href="#!" class="footer__link">FAQs + Shipping</a>
-					</li>
-					<li class="footer__item">
-						<a href="#!" class="footer__link">Contact</a>
-					</li>
-					<li class="footer__item">
-						<a href="#!" class="footer__link">Terms</a>
-					</li>	
-					<li class="footer__item">
-						<a href="#!" class="footer__link">Trade</a>
-					</li>	
-				</ul>
-			</div>
-		</div>
-		<div class="footer__block-table" style="width: 22%;">
-			<div class="social">
-				<a href="#" class=""><img src="img/icon-facebook.png" alt="facebook" class="social-face"></a>
-				<a href="#" class=""><img src="img/icon-mail.png" alt="mail" class="social-face"></a>
-				<a href="#" class=""><img src="img/icon-inst.png" alt="instagram" class="social-face"></a>
-			</div>
-		</div>
+
 	</div>
+
 </footer>
 
-<script src="js/main.js"></script>
+<!-- <script src="js/main.js"></script> -->
 
 </body>
 </html>
