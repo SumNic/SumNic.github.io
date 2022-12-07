@@ -1215,3 +1215,131 @@ header{
     color: #FFFFFF;
 
 }
+
+.footer__grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr)
+}
+
+.footer__grid1{
+    text-align: left;
+    padding: 40px;
+    /* column-gap: span 1; */
+}
+
+.footer__grid1:last-child{
+    padding-left: 0px;
+}
+
+.footer__title{
+    display: block;
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.footer__title__2{
+    display: block;
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: #FFFFFF;
+    padding-bottom: 10px;
+}
+
+.grin{
+    color: #0C9F64;
+}
+
+.yellow{
+    color: #FEC104;
+}
+
+.footer__text{
+    display: block;
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 25px;
+    color: #778291;
+    padding-bottom: 20px;
+}
+
+.product__inline{
+    display: flex;
+}
+
+.footer__new{
+    width: 42px;
+    height: 23px;
+    margin-left: 2px;
+}
+
+.footer__new2{
+    width: 21px;
+    height: 21px;
+    margin-left: 2px;
+    background: #FC4945;
+    border-radius: 10px;
+    margin-left: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__new2__link{
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.pricing{
+    padding-top: 20px;
+}
+
+.footer__form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+#form__form{
+    display: flex;
+}
+
+#footer__email{
+    display: flex;
+    border: none;
+    width: 256px;
+    height: 40px;
+    background: rgba(119, 130, 145, 0.3);
+    border-radius: 8px 0px 0px 8px;
+}
+
+#footer__submit{
+    display: flex;
+    border: none;
+    width: 78px;
+    color: #FFFFFF;
+    background: #595D68;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.social__img{
+    margin-right: 8px;
+}
