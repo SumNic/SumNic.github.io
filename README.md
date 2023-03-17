@@ -1,10 +1,10 @@
 # Учебные работы
 
--Проект sundial;<br> 
+- Проект sundial;<br> 
     - показывает положение Земли относительно Солнца в текущий момент, или в любую выбранную дату. Сайт создан с помощью HTML, CSS, JS;<br> 
     - https://sumnic.github.io/sundial/Index.html<br> 
 <br> 
--Проект dictionary;<br> 
+- Проект dictionary;<br> 
     - позволяет создавать свой список изучаемых английских слов,все слова сохраняются в local storage, что позволяет постоянно пополнять базу слов. Сайт создан с помощью HTML, CSS, JS;<br> 
     - https://sumnic.github.io/dictionary/Untitled-1.html<br> 
 <br> 
